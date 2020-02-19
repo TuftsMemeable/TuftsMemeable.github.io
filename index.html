@@ -4,15 +4,17 @@
     <script src="createOrder.js"></script>
     <script>
       function testStuff() {
-        var queryData = createOrder("shirt", "white", "small", 42, "randomImage.png");
-        alert(queryData);
+        var queryParams = createOrder("shirt", "white", "small", 42, "randomImage.png");
+        if (queryParams != undefined) {
+          window.location.href = "index.html?" + queryParams
+        }
       }
     </script>
   </head>
 
 
   <body>
-    <button value="Testing" onclick="testStuff()"></button>
+    <button onclick="testStuff()">Generate Parameters</button>
   </body>
 
 </html>
