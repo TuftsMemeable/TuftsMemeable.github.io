@@ -49,6 +49,8 @@ function createOrder(orderType, color, size, quantity, memeImage) {
   }
 
   var orderParamString = encodeOrderData(orderData);
+
+  return orderParamString;
   
 
 }
