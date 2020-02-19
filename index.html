@@ -3,14 +3,16 @@
   <head>
     <script src="createOrder.js"></script>
     <script>
-      var queryData = createOrder("shirt", "white", "small", 42, "randomImage.png");
-      alert(queryData);
+      function testStuff() {
+        var queryData = createOrder("shirt", "white", "small", 42, "randomImage.png");
+        alert(queryData);
+      }
     </script>
   </head>
 
 
   <body>
-
+    <button value="Testing" onclick="testStuff()"></button>
   </body>
 
 </html>
