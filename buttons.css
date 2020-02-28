@@ -1,0 +1,25 @@
+.button {
+  background-color: #375795;
+  color: white;
+  padding: 15px 32px;
+  margin: 20px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  font-family: Times;
+  border-radius: 8px;
+  max-width: 500px;
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color:#24305E;
+  color: white;
+  cursor: pointer;
+}
+
+a {
+  color: white;
+  font-family: Times;
+  text-decoration: none;
+}
