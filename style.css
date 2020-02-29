@@ -23,3 +23,31 @@ a {
   font-family: Times;
   text-decoration: none;
 }
+
+/**************** for Isabel ****************
+https://samtufts.github.io/hw3/
+.description{
+    margin: 20px;
+    height: 50%; 
+    padding: 35px; 
+    text-align: center; 
+    border-radius: 5px;
+    font-size: 18px; 
+    font-weight: lighter; 
+    box-shadow: 5px 5px 10px #e3e3e3;
+}  
+
+
+.testimonials-text p{
+    padding-top: 25px;
+}
+
+
+@media screen and (min-width: 600px){
+    .flex-container {
+        display: flex;
+        margin: 30px;
+        height: 600px;
+    }
+  
+***************************************************/
