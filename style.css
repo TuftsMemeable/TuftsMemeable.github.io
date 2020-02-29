@@ -28,17 +28,18 @@ a {
     padding-top: 40px;
     min-height: 100VH;
     background-position:center;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     color: white;
     overflow: hidden;
 }
 
 #hero-about{
-    background-image: url('dogwalks.jpg');
+    background-image: url('');
 }
 
 #hero-home{
-    background-image: url('twodogs.jpg');
+    background-image: url('Slice.png');
 }
 
 #hero-contact{
