@@ -1,0 +1,33 @@
+.threeboxes {
+  float: center;
+  width: 100%;
+  padding-top: 1%;
+  text-align: center;
+}
+
+.box {
+  float:center;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: #375795;
+  width: 17%;
+  padding-top: 1%;
+  display: inline-block;
+  padding: 15 32;
+  margin: 20px;
+}
+
+
+@media (max-width: 750px) {
+  .box{
+    flex-direction: column;
+    width: 250px;
+    height: 300px;
+  }
+  .threeboxes{
+    height: 1150px;
+  }
+}
