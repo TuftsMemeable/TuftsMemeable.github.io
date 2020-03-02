@@ -1,1 +1,101 @@
+<html>
+
+  <head>
+    <script src="createOrder.js"></script>    
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+<!-- will need to be passed the total cost of the items.  -->
+
+  <body>
+      
+    <script language="javascript">
+    
+    function validation() {
+    	
+    	with (document.buyerform) {
+    		
+    		if (fname.value == "") {
+    			alert("Please enter your first name");
+    			return false;
+    		}
+    		
+            if (lname.value == "") {
+                alert("Please enter your last name");
+    			return false;
+            }
+            
+    		if (phone.value == "") {
+    			alert("Please enter a phone number");
+    			return false;
+    		}
+    		
+    		var phone_pattern = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+    
+    		if (!phone.value.match(phone_pattern)) {
+    			alert("Please enter a valid phone number using the dash format: 123-456-7890")
+    			
+    			return false;
+    		}
+            
+            // checkbox validation
+    		
+    		return true;
+    	}
+    }
+    
+    </script>
+    
+    <div id="hero-order">
+        
+    </div>  
+    
+    <div class="intro">
+        <p>Please fill out the form below to get your awesome swag in just 7 days! <br> 
+        </p>
+    </div>
+    
+    
+    <form name="buyerform" onsubmit="return show_confirmation()">
+
+    <!-- customer information -->
+    <p>First Name*: <input class="info" type="text"  name='fname' 	/></p>
+
+    <p>Last Name*: 	<input class="info" type="text"  name='lname' value="ewenczyk"/></p>
+
+    <p>Phone*: 		<input class="info" type="tel"   name='phone' placeholder="format: 123-456-7890" title="Please enter a valid phone number using this pattern: 123-456-7890"	/></p>
+
+    <p>Email*: 		<input class="info" type="email"   name='email' placeholder="john.dewick@tufts.edu" title="Please enter a valid email address"	/></p>
+    <input type="reset">
+    
+    <br> <br> 
+    
+    <p>You are ordering: # [shirts] </p>
+    
+    <!-- cost total -->
+    <p> Subtotal: $ 	  <input class="info" type="text"  name='subtotal' id="subtotal" /></p>
+    <p> Mass tax 6.25%: $ <input class="info" type="text"  name='tax' id="tax"		    /></p>
+    <p> Total: $ 		  <input class="info" type="text"  name='total' id="total"	    /></p>
+    
+    
+    
+    <p>Your [item] will be ready within 7 days. Please choose the day you'd like to pick up</p>
+    <input type="date" id="birthday" name="birthday">
+    
+    <label for="datemax">Enter a date before 1980-01-01:</label>
+<input type="date" id="datemax" name="datemax" max="1979-12-31"><br><br>
+<label for="datemin">Enter a date after 2000-01-01:</label>
+<input type="date" id="datemin" name="datemin" min="2000-01-02">
+
+    <!-- agree to pay upon receipt -->
+    <p><input type="checkbox" id="consent" name="consent"> By checking this box you commit to paying TuftsMemable upon receiving your swag. </p> 
+    <!-- <label for="consent"> </label><br> -->
+
+    <input class="button" type = "submit" value = "Confirm Order"/>
+    
+</form>
+    
+  </body>
+
+</html>
 

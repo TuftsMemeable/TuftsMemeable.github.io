@@ -1,3 +1,11 @@
+h1, h2, h3 {
+    color: black;
+    text-align: center;
+}
+
+body {
+    font-family: Open Sans, Roboto, sans-serif;
+}
 .button {
   background-color: #375795;
   color: white;
@@ -6,7 +14,7 @@
   text-align: center;
   display: inline-block;
   font-size: 16px;
-  font-family: Times;
+  /* font-family: Times; */
   border-radius: 8px;
   max-width: 500px;
   transition-duration: 0.4s;
@@ -18,17 +26,33 @@
   cursor: pointer;
 }
 
+#button-home {
+    text-align: center;
+}
+
 a {
   color: white;
-  font-family: Times;
+  /* font-family: Times; */
   text-decoration: none;
 }
 
-#hero-about, #hero-home, #hero-contact{
+.intro p{
+    color: #254087;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 3em;
+    width: 75%;
+    text-align: center;
+    margin: auto;
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+#hero-about, #hero-home, #hero-contact, #hero-order{
     padding-top: 40px;
     min-height: 100VH;
-    background-position:center;
-    background-size: contain;
+    background-position: center;
+    background-size: 100%;
     background-repeat: no-repeat;
     color: white;
     overflow: hidden;
@@ -39,37 +63,63 @@ a {
 }
 
 #hero-home{
-    background-image: url('slicenew@1x.png');
+    /* background-image: url('slicenew@1x.png'); */
+    background-image: url('guysolo.png');
 }
 
 #hero-contact{
-    background-image: url('manwithdog.jpg');
+    background-image: url('');
 }
 
-/**************** for Isabel ****************
-https://samtufts.github.io/hw3/
-.description{
+#hero-order {
+    background-image: url('twogirls.png');
+}
+
+.threeboxes {
+    float: center;
+    width: 100%;
+    padding-top: 1%;
+    text-align: center;
+}
+
+.box {
+    float:center;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border-style: solid;
+    border-radius: 8px;
+    border-color: #375795;
+    width: 17%;
+    padding-top: 1%;
+    display: inline-block;
+    padding: 15 32;
     margin: 20px;
-    height: 50%; 
-    padding: 35px; 
-    text-align: center; 
-    border-radius: 5px;
-    font-size: 18px; 
-    font-weight: lighter; 
-    box-shadow: 5px 5px 10px #e3e3e3;
-}  
-
-
-.testimonials-text p{
-    padding-top: 25px;
 }
 
 
-@media screen and (min-width: 600px){
-    .flex-container {
-        display: flex;
-        margin: 30px;
-        height: 600px;
-    }
+@media (max-width: 750px) {
+    
+  .box{
+    flex-direction: column;
+    width: 250px;
+    height: 300px;
+  }
   
-***************************************************/
+  .threeboxes{
+    height: 1150px;
+  }
+  
+  .intro {
+    height: 600px;
+    margin: 30px;
+    margin-top: 200px;
+  }
+  
+  
+  #hero-about, #hero-home, #hero-contact {
+    background-size: 100VH;
+  }
+  
+  
+}
