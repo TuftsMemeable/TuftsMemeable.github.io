@@ -32,7 +32,6 @@ label {
     width: 120px;
     display: inline-block;
     text-align: left;
-
 }
 
 #consent label {
@@ -125,8 +124,8 @@ label {
 }
 
 #consent {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 25px;
+    margin-bottom: 25px;
     text-align: center;
     line-height: 0em;
 }
@@ -162,6 +161,9 @@ label {
     margin: 20px;
 }
 
+.center {
+    text-align: center;
+}
 
 @media (max-width: 750px) {
     
@@ -181,7 +183,7 @@ label {
     margin-top: 200px;
   }
   
-  
+
   #hero-about, #hero-home, #hero-contact {
     background-size: 100VH;
   }
