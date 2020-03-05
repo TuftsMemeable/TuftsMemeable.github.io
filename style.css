@@ -79,7 +79,7 @@ label {
     min-height: 500px;
 }
 
-#hero-about, #hero-home, #hero-contact, #hero-order {
+#hero-about, #hero-home, #hero-contact, #hero-order, #hero-design {
     padding-top: 40px;
     min-height: 100VH;
     background-position: center;
@@ -89,17 +89,21 @@ label {
     overflow: hidden;
 }
 
-#hero-about{
+#hero-about {
     background-image: url('');
 }
 
-#hero-home{
+#hero-home {
     /* background-image: url('slicenew@1x.png'); */
     background-image: url('guysolo.png');
 }
 
-#hero-contact{
+#hero-contact {
     background-image: url('');
+}
+
+#hero-design {
+    background-image: url('twogirls.png');
 }
 
 #hero-order {
