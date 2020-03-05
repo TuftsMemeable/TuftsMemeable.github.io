@@ -55,6 +55,7 @@
             if(!consent.checked) {
                 alert("please check the consent box")
                 $('#consent').css('background-color', 'red')
+                return false;
             }
     		
     		return true;
@@ -153,11 +154,14 @@
     
         <div id="consent">
             <input id="consent" type="checkbox" name="consent"> 
-            <label for="consent">By checking this box you commit to paying TuftsMemable upon receiving your swag.</label>
+            <label for="consent">By checking this box you commit to paying TuftsMemable at pickup.</label>
             
         </div>
     
+    <div class="center">
         <input class="button" type = "submit" value = "Confirm Order"/>
+    </div>
+        
         
     </form>
 
