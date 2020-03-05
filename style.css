@@ -1,11 +1,44 @@
 h1, h2, h3 {
     color: black;
     text-align: center;
+    font-weight: normal;
+    margin: 25px;
 }
 
 body {
     font-family: Open Sans, Roboto, sans-serif;
 }
+
+h1 {
+    font-size: 25px;
+
+}
+
+h2 {
+    font-size: 20px;
+
+}
+
+p, label {
+    font-size: 14px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+label {
+    width: 120px;
+    display: inline-block;
+    text-align: left;
+}
+
+#consent label {
+    width: 100%;
+    display: inline;
+}
+
 .button {
   background-color: #375795;
   color: white;
@@ -14,7 +47,6 @@ body {
   text-align: center;
   display: inline-block;
   font-size: 16px;
-  /* font-family: Times; */
   border-radius: 8px;
   max-width: 500px;
   transition-duration: 0.4s;
@@ -30,12 +62,6 @@ body {
     text-align: center;
 }
 
-a {
-  color: white;
-  /* font-family: Times; */
-  text-decoration: none;
-}
-
 .intro p{
     color: #254087;
     font-weight: normal;
@@ -48,7 +74,12 @@ a {
     margin-bottom: 200px;
 }
 
-#hero-about, #hero-home, #hero-contact, #hero-order{
+#order-intro {
+    background-color: #0098E3;
+    min-height: 500px;
+}
+
+#hero-about, #hero-home, #hero-contact, #hero-order {
     padding-top: 40px;
     min-height: 100VH;
     background-position: center;
@@ -72,7 +103,40 @@ a {
 }
 
 #hero-order {
-    background-image: url('twogirls.png');
+    padding-top: 40px;
+    min-height: 50VH;
+    color: white;
+    overflow: hidden;
+    background-color: #0098E3;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 3em;
+    text-align: center;
+}
+
+#hero-order p {
+    margin-top: 10%;
+    font-size: 25px;
+}
+#order-summary, #customer-info, #delivery_date {
+    margin-top: 50px;
+    text-align: center;
+}
+
+#consent {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+    line-height: 0em;
+}
+#order-summary p {
+    text-align: center;
+}
+#delivery_date {
+    color: #254087;
+    /* font-size: 20px; */
+    font-weight: bold;
+    
 }
 
 .threeboxes {
@@ -97,6 +161,9 @@ a {
     margin: 20px;
 }
 
+.center {
+    text-align: center;
+}
 
 @media (max-width: 750px) {
     
@@ -116,7 +183,7 @@ a {
     margin-top: 200px;
   }
   
-  
+
   #hero-about, #hero-home, #hero-contact {
     background-size: 100VH;
   }
