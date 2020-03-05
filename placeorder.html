@@ -3,6 +3,9 @@
   <head>
     <script src="createOrder.js"></script>    
     <link rel="stylesheet" href="style.css">
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
   </head>
 
 <!-- will need to be passed the total cost of the items.  -->
@@ -11,81 +14,154 @@
       
     <script language="javascript">
     
+    
     function validation() {
     	
     	with (document.buyerform) {
-    		
+    		//validate first name
     		if (fname.value == "") {
     			alert("Please enter your first name");
+                fname.focus();
     			return false;
     		}
     		
+            //validate last name
             if (lname.value == "") {
                 alert("Please enter your last name");
+                lname.focus();
     			return false;
             }
             
-    		if (phone.value == "") {
-    			alert("Please enter a phone number");
-    			return false;
-    		}
-    		
+            // verify email is a tufts.edu address and not empty
+            email_address = email.value;
+            console.log("email address: " + email_address);
+
+            if (email.value == "" || !/tufts.edu\s*$/.test(email_address)) {
+                alert("Please enter a valid \"@tufts.edu\" email address");
+                email.focus();
+                return false;
+            }
+                
+            //validate phone field is not empty and is in the right format
     		var phone_pattern = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
     
-    		if (!phone.value.match(phone_pattern)) {
+    		if (!phone.value.match(phone_pattern) || phone.value == "") {
     			alert("Please enter a valid phone number using the dash format: 123-456-7890")
-    			
+    			phone.focus();
     			return false;
     		}
             
             // checkbox validation
+            if(!consent.checked) {
+                alert("please check the consent box")
+                $('#consent').css('background-color', 'red')
+            }
     		
     		return true;
     	}
     }
     
+    window.onload = function() {
+        d = new Date;
+        
+        var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        
+        var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
+        day_month = "Your order " + 
+                    "will be ready for pickup this coming " + 
+                    days[(d.getDay() + 4) % 7] + "!";
+                    // ", " + 
+                    // months[d.getMonth()];
+        
+        document.getElementById('delivery_date').innerHTML = day_month;
+        
+        
+    }
     </script>
     
+
     <div id="hero-order">
-        
-    </div>  
-    
-    <div class="intro">
-        <p>Please fill out the form below to get your awesome swag in just 7 days! <br> 
+        <p>Please review your order and fill out the form to get your swag in just 4 days! <br> 
         </p>
     </div>
-    
-    
-    <form name="buyerform" onsubmit="return show_confirmation()">
 
-    <!-- customer information -->
-    <p>First Name*: <input class="info" type="text"  name='fname' 	/></p>
 
-    <p>Last Name*: 	<input class="info" type="text"  name='lname' value="ewenczyk"/></p>
 
-    <p>Phone*: 		<input class="info" type="tel"   name='phone' placeholder="format: 123-456-7890" title="Please enter a valid phone number using this pattern: 123-456-7890"	/></p>
+    <!-- ORDER SUMMARY -->
+    <div id="order-summary">
+        <h2>Your Order Summary</h2>
+                
+        <label for="item">Product:</label>
+        <input class="info" type="text"  name='item' />
+        
+        <br>
+        
+        <label for="count">Count:</label>
+        <input class="info" type="text"  name='count' />
+        
+        <br>
+        
+        <label for="price">Price:</label>
+        <input class="info" type="text"  name='price' />
+        
+        <br>
+        
+        <label for="subtotal">Subtotal: $</label>
+        <input class="info" type="text"  name='subtotal' id="subtotal" />
+        
+        <br>
+        
+        <label for="tax">MA tax 6.25%: $</label> 
+        <input class="info" type="text"  name='tax' id="tax"/>
+        
+        <br>
+        
+        <label for="total">Total: $</label> 
+        <input class="info" type="text"  name='total' id="total"/>
 
-    <p>Email*: 		<input class="info" type="email"   name='email' placeholder="john.dewick@tufts.edu" title="Please enter a valid email address"	/></p>
-    <input type="reset">
+    </div>
     
-    <br> <br> 
+        
+    <!-- CUSTOMER INFORMATION -->
+    <form name="buyerform" onsubmit="return validation()">
+        
+        <div id="customer-info">
+            <h2>Your Information</h2>
+            
+            <label for="fname">First Name*:</label>
+            <input class="info" type="text"  name='fname' value="sam"/>
+            
+            <br>
+            
+            <label for="lname">Last Name*:</label>
+            <input class="info" type="text"  name='lname' value="Ewenczyk"/>
+            
+            <br>
+        
+            <label for="email">Email*:</label>
+            <input class="info" type="email"   name='email' value='sam@tufts.edu' placeholder="john.dewick@tufts.edu" title="Please enter a valid email address"/>
+            
+            <br>        
+            
+            <label for="phone">Phone*:</label>
+            <input class="info" type="tel"   name='phone' value="123-456-7890"  placeholder="format: 123-456-7890" title="Please enter a valid phone number using this pattern: 123-456-7890"/>
+        </div>
+        
+        <div id="delivery_date">
+        </div>
     
-    <p>You are ordering: # [shirts] </p>
+        <div id="consent">
+            <input id="consent" type="checkbox" name="consent"> 
+            <label for="consent">By checking this box you commit to paying TuftsMemable upon receiving your swag.</label>
+            
+        </div>
     
-    <!-- cost total -->
-    <p> Subtotal: $ 	  <input class="info" type="text"  name='subtotal' id="subtotal" /></p>
-    <p> Mass tax 6.25%: $ <input class="info" type="text"  name='tax' id="tax"		    /></p>
-    <p> Total: $ 		  <input class="info" type="text"  name='total' id="total"	    /></p>
-    
-    <p>Your [item] will be ready within 7 days. Please choose the day you'd like to pick up</p>
+        <input class="button" type = "submit" value = "Confirm Order"/>
+        
+    </form>
 
-    <!-- agree to pay upon receipt -->
-    <p><input type="checkbox" id="consent" name="consent"> By checking this box you commit to paying TuftsMemable upon receiving your swag. </p> 
-    <!-- <label for="consent"> </label><br> -->
-
-    <input class="button" type = "submit" value = "Confirm Order"/>
-    
-</form>
+    <a class="button" id="" href="index.html">Home Page for Sam</a>
     
   </body>
 
