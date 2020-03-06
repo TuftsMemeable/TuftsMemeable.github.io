@@ -19,10 +19,13 @@ h2 {
 
 }
 
-p, label {
+p, dl, input {
     font-size: 14px;
 }
 
+input {
+    margin: 3px;
+}
 a {
   color: white;
   text-decoration: none;
@@ -34,20 +37,30 @@ label {
     text-align: left;
 }
 
-#consent label {
+#consent-div label {
     width: 100%;
     display: inline;
+    text-align: center; 
+}
+
+#consent-div {
+    width: 600px;
+    display: block;
+    margin: auto;
+    margin-top: 25px;
+    padding: 20px;
 }
 
 .button {
-  background-color: #375795;
-  color: white;
-  padding: 15px 32px;
+  /* background-color: #375795; */
+  border: solid 2px #375795;
+  color: #375795;
+  padding: 15px 20px;
   margin: 20px;
   text-align: center;
   display: inline-block;
-  font-size: 16px;
-  border-radius: 8px;
+  font-size: 14px;
+  border-radius: 4px;
   max-width: 500px;
   transition-duration: 0.4s;
 }
@@ -131,19 +144,14 @@ label {
     text-align: center;
 }
 
-#consent {
-    margin-top: 25px;
-    margin-bottom: 25px;
-    text-align: center;
-    line-height: 0em;
-}
+
 #order-summary p {
     text-align: center;
 }
 #delivery_date {
     color: #254087;
     /* font-size: 20px; */
-    font-weight: bold;
+    font-weight:600;
     
 }
 
@@ -191,7 +199,6 @@ label {
     margin-top: 200px;
   }
   
-
   #hero-about, #hero-home, #hero-contact {
     background-size: 100VH;
   }

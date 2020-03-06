@@ -8,13 +8,11 @@
     
   </head>
 
-<!-- will need to be passed the total cost of the items.  -->
-
   <body>
       
     <script language="javascript">
     
-    
+    //Validates that required fields are filled in before submitting the form
     function validation() {
     	
     	with (document.buyerform) {
@@ -53,8 +51,14 @@
             
             // checkbox validation
             if(!consent.checked) {
-                alert("Please check the box to indicate you commit to submitting payment upon receiving your swag. Thank you!")
-                $('#consent').css('background-color', 'red')
+                
+                alert("Please check the box to indicate you commit to submitting payment upon receiving your swag. Thank you!");
+                
+                $('#consent-div').css(
+                    {
+                        "border-color": "#C1E0FF", "border-width":"2px", "border-style":"solid"
+                    });
+                
                 return false;
             }
     		
@@ -62,6 +66,7 @@
     	}
     }
     
+    //Determines the day when the order will be ready for pickup
     window.onload = function() {
         d = new Date;
         
@@ -75,52 +80,91 @@
                     // ", " + 
                     // months[d.getMonth()];
         
-        document.getElementById('delivery_date').innerHTML = day_month;
+        //add delivery date to page
+        $('#delivery_date').html(day_month);
         
+        //get the order parameters from the URL
+        calculateOrder("t-shirt", 5, 25, "medium");
+    }
+    
+    
+    
+    //Calculate order pricing
+    function calculateOrder(item, count, price, size) {
+
+        $("#count").val("5");
+        $("#size").val("medium");
+        $("#item").val("tshirt");
+        $("#price").val("25");
+        subtotal = count * price;
+        $("#subtotal").val(subtotal);
+        tax = subtotal * 0.0625;
+        $("#tax").val(tax.toFixed(2));
+        total = tax + subtotal;
+        $("#total").val(total.toFixed(2));
+        
+        
+        //disable the fields
+        $(".summary").prop("disabled", true);
+            
+
+
         
     }
+    
+    
     </script>
     
-
+    <!-- HERO IMAGE -->
     <div id="hero-placeorder">
         <p>Please review your order and fill out the form to get your swag in just 4 days! <br> 
         </p>
     </div>
 
 
-
     <!-- ORDER SUMMARY -->
     <div id="order-summary">
         <h2>Your Order Summary</h2>
-                
-        <label for="item">Product:</label>
-        <input class="info" type="text"  name='item' />
         
-        <br>
-        
-        <label for="count">Count:</label>
-        <input class="info" type="text"  name='count' />
-        
-        <br>
-        
-        <label for="price">Price:</label>
-        <input class="info" type="text"  name='price' />
-        
-        <br>
-        
-        <label for="subtotal">Subtotal: $</label>
-        <input class="info" type="text"  name='subtotal' id="subtotal" />
-        
-        <br>
-        
-        <label for="tax">MA tax 6.25%: $</label> 
-        <input class="info" type="text"  name='tax' id="tax"/>
-        
-        <br>
-        
-        <label for="total">Total: $</label> 
-        <input class="info" type="text"  name='total' id="total"/>
-
+        <form name="orderform">
+            
+            <label for="item">Product:</label>
+            <input class="summary" type="text"  name='item' id="item" />
+            
+            <br>
+            
+            <label for="size">Size:</label>
+            <input class="summary" type="text"  name='size' id="size" />
+            
+            <br>
+            
+            <label for="count">Count:</label>
+            <input class="summary" type="text"  name='count' id="count" />
+            
+            <br>
+            
+            <label for="price">Item Price:</label>
+            <input class="summary" type="text"  name='price' id="price"/>
+            
+            <br>
+            
+            <label for="subtotal">Subtotal: $</label>
+            <input class="summary" type="text"  name='subtotal' id="subtotal" />
+            
+            <br>
+            
+            <label for="tax">MA tax 6.25%: $</label> 
+            <input class="summary" type="text"  name='tax' id="tax"/>
+            
+            <br>
+            
+            <label for="total">Total: $</label> 
+            <input class="summary" type="text"  name='total' id="total"/>
+            
+            <br>
+            
+            <a class="button" id="" href="design.html">&larr; Update Order</a>
+        </form>
     </div>
     
         
@@ -152,16 +196,15 @@
         <div id="delivery_date">
         </div>
     
-        <div id="consent">
+        <div id="consent-div">
             <input id="consent" type="checkbox" name="consent"> 
             <label for="consent">By checking this box you commit to paying TuftsMemable at pickup.</label>
-            
         </div>
     
     <div class="center">
+        <!-- <a class="button" id="" href="design.html">&larr; Update Order</a> -->
         <input class="button" type = "submit" value = "Confirm Order"/>
     </div>
-        
         
     </form>
 
