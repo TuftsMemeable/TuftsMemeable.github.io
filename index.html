@@ -2,25 +2,25 @@
 
   <head>
     <script src="createOrder.js"></script>
-    <script>
-      function testStuff() {
-        var queryParams = createOrder("shirt", "white", "small", 42, "randomImage.png");
-        if (queryParams != undefined) {
-          window.location.href = "index.html?" + queryParams
-        }
-      }
-      
-    // JQuery
-    src="https://code.jquery.com/jquery-3.4.1.js"
-    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-    crossorigin="anonymous">
-    </script>
     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        
     <link rel="stylesheet" href="style.css">
   </head>
 
-
   <body>
+      <script language="javascript">
+      
+      function testStuff() {
+          var queryParams = createOrder("shirt", "white", "small", 42, "randomImage.png");
+          if (queryParams != undefined) {
+            window.location.href = "index.html?" + queryParams
+          }
+      }
+      
+      $("h2").hide().fadeIn(2000);
+      
+      </script>
     
     <div id="hero-home">
         <!-- <h1>Show your school pride</h1> -->
@@ -62,7 +62,7 @@
         <a class="button" id="" href="products.html">View Products</a>    
     </div>
  
-    DAVID DON'T TOUCH MY BUTTON!! ;-) <br>
+     <br>
     <a class="button" id="button-home" href="placeorder.html">Place Order</a>
     <button onclick="testStuff()">Generate Parameters</button>
     

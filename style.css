@@ -99,12 +99,19 @@ label {
     background-repeat: no-repeat;
     color: white;
     overflow: hidden;
+    background-size: cover;
 }
 
 #hero-about {
     background-image: url('');
-    min-height: 50VH;
-    
+    min-height: 60VH;
+}
+
+#hero-design {
+    background-image: url('slicenew@1x.png');
+    min-height: 60VH;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 #hero-home {
@@ -120,11 +127,11 @@ label {
 
 #hero-products {
     background-image: url('twogirls.png');
-    min-height: 50VH;
+    min-height: 60VH;
 }
 
 #hero-placeorder {
-    min-height: 50VH;
+    min-height: 60VH;
     color: white;
     overflow: hidden;
     background-color: #0098E3;
