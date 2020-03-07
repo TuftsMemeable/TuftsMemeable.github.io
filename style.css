@@ -14,20 +14,22 @@ h2 {
 }
 
 h3 {
-    color: black;
+    color: #000;
 }
 
 body {
     font-family: Open Sans, Roboto, sans-serif;
 }
 
-p, dl, input, label {
+p, dl, label {
     font-size: 14px;
     color: #fff;
 }
 
 input {
     margin: 3px;
+    font-size: 14px;
+    color: #000;
 }
 
 a {
@@ -81,8 +83,10 @@ label {
     background-color: #375795;
     
 }
-input .button {
-    /* color: black; */
+input.button {
+    color: #fff;
+    background-color: #007C82;
+
 }
 
 .button:hover {
@@ -186,8 +190,6 @@ input .button {
     background-color: #007C82;
     padding: auto;
 }
-
-
 
 
 #order-summary p {

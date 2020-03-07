@@ -58,7 +58,7 @@
                 
                 $('#consent-div').css(
                     {
-                        "border-color": "#C1E0FF", "border-width":"2px", "border-style":"solid"
+                        "border-color": "#4A0D66", "border-width":"2px", "border-style":"solid"
                     });
                 
                 return false;
@@ -97,6 +97,7 @@
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
     
     function getParams() {
+        console.log('inside get params');
         
         var params = decodeOrderData(window.location.search);
         var color = params["color"];
@@ -113,6 +114,7 @@
 
     //Calculate order cost and populate order summary form
     function calculateOrder(orderType, quantity, price, size, color) {
+        console.log('inside calculateOrder');
         
         //add the params data to order summary fields
         $("#count").val(quantity);
@@ -237,8 +239,8 @@
             
             <div class="center">
                 <!-- <a class="button" id="" href="design.html">&larr; Update Order</a> -->
-                <!-- <input class="button" type = "submit" value = "Confirm Order"/> -->
-                <a class="button" id="" href="#">Confirm Order&rarr; </a>
+                <input class="button" type = "submit" value = "Confirm Order"/>
+                <!-- <a class="button" id="" href="ordercomplete.html">Confirm Order&rarr; </a> -->
             </div>
         </div>
         
