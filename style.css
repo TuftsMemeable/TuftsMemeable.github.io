@@ -1,5 +1,5 @@
 h1, h2, h3 {
-    color: black;
+    color: white;
     text-align: center;
     font-weight: normal;
     margin: 25px;
@@ -21,11 +21,13 @@ h2 {
 
 p, dl, input, label {
     font-size: 14px;
+    color: #fff;
 }
 
 input {
     margin: 3px;
 }
+
 a {
   color: white;
   text-decoration: none;
@@ -60,8 +62,9 @@ label {
 
 .button {
   /* background-color: #375795; */
-  border: solid 2px #375795;
-  color: #375795;
+  border: solid 2px #FFF;
+  /* #375795 */
+  color: #FFF;
   padding: 12px 14px;
   margin: 20px;
   text-align: center;
@@ -70,6 +73,10 @@ label {
   border-radius: 4px;
   max-width: 500px;
   transition-duration: 0.4s;
+}
+
+input .button {
+    /* color: black; */
 }
 
 .button:hover {
@@ -83,15 +90,19 @@ label {
 }
 
 .intro p{
-    color: #254087;
+    color: #FFF;
     font-weight: normal;
     font-size: 25px;
-    line-height: 3em;
-    width: 75%;
+    line-height: 2em;
+    width: 55%;
     text-align: center;
     margin: auto;
-    margin-top: 200px;
-    margin-bottom: 200px;
+}
+
+.intro {
+    background-color: #4A0D66;
+    padding-top: 200px;
+    padding-bottom: 200px;
 }
 
 #order-intro {
@@ -153,10 +164,24 @@ label {
     margin-top: 10%;
     font-size: 25px;
 }
-#order-summary, #customer-info, #delivery_date {
-    margin-top: 50px;
+#order-summary, #customer-info {
+    /* margin-top: 50px; */
+    padding: 50px;
     text-align: center;
+    
+    min-height: 400px;
+
 }
+#order-summary {
+    background-color: #4A0D66;
+}
+
+#customer-info {
+    background-color: #007C82;
+    padding: auto;
+}
+
+
 
 
 #order-summary p {
@@ -172,8 +197,10 @@ label {
 .threeboxes {
     float: center;
     width: 100%;
-    padding-top: 1%;
+    padding-top: 5%;
+    padding-bottom: 5%;
     text-align: center;
+    background-color: #007C82;
 }
 
 .box {
@@ -191,31 +218,49 @@ label {
     margin: 20px;
 }
 
+.box img {
+    height: 350px;
+    padding-top: 20px;
+}
+
+
 .center {
     text-align: center;
 }
+
+
 
 @media (max-width: 750px) {
     
   .box{
     flex-direction: column;
     width: 250px;
-    height: 375px;
   }
   
   .threeboxes{
-    height: 1350px;
+    margin-bottom: 25px;
   }
   
   .intro {
-    height: 600px;
-    margin: 30px;
-    margin-top: 200px;
+    height: 400px;
+    /* margin: 30px; */
+    margin-top: 20px;
+    margin-bottom: 0px;
   }
   
+  .intro p {
+      font-size: 18px;
+      line-height: 2em;
+      /* margin-bottom: 0px; */
+      margin-top: 0px;
+  }
+   
   #hero-about, #hero-home, #hero-contact {
     background-size: 100VH;
   }
-  
+  /* 
+  .center {
+    margin-top: 25px;
+  } */
   
 }

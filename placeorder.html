@@ -122,7 +122,7 @@
         $("#item").val(orderType);
         
         // $("#price").val(price);// don't have this yet in params
-        $("#price").val(25); // placeholder
+        $("#price").val("$" + 25); // placeholder
         
         // subtotal = quantity * price;
         subtotal = quantity * 25; //placeholder value for now
@@ -233,6 +233,13 @@
                 <input id="consent" type="checkbox" name="consent"> 
                 <label for="consent">By checking this box you commit to paying TuftsMemable at time of pickup.</label>
             </div>
+            
+            
+            <div class="center">
+                <!-- <a class="button" id="" href="design.html">&larr; Update Order</a> -->
+                <!-- <input class="button" type = "submit" value = "Confirm Order"/> -->
+                <a class="button" id="" href="#">Confirm Order&rarr; </a>
+            </div>
         </div>
         
         <!-- <div id="delivery_date">
@@ -240,10 +247,7 @@
     
         
     
-    <div class="center">
-        <!-- <a class="button" id="" href="design.html">&larr; Update Order</a> -->
-        <input class="button" type = "submit" value = "Confirm Order"/>
-    </div>
+
         
     </form>
 
