@@ -24,12 +24,17 @@
             d = new Date;
 
             var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
+            
+            //array is 0-indexed
             var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-
+            
+            console.log("current day: " +d.getDay() );
+            console.log((d.getDay() + 4) % 7 - 1);
+            
+            //d.getDay is NOT 0-index, i.e. Monday = 1, Tuesday = 2
             day_month = "Your order " + 
                       "will be ready for pickup this coming " + 
-                      days[(d.getDay() + 4) % 7] + "!";
+                      days[(d.getDay() + 4) % 7 - 1] + "!";
                       // ", " + 
                       // months[d.getMonth()];
 
