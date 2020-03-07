@@ -12,6 +12,8 @@
       
     <script language="javascript">
     
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
     //Validates that required fields are filled in before submitting the form
     function validation() {
     	
@@ -66,52 +68,87 @@
     	}
     }
     
-    //Determines the day when the order will be ready for pickup
-    window.onload = function() {
-        d = new Date;
-        
-        var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-        
-        var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-        day_month = "Your order " + 
-                    "will be ready for pickup this coming " + 
-                    days[(d.getDay() + 4) % 7] + "!";
-                    // ", " + 
-                    // months[d.getMonth()];
+    //Determines the day when the order will be ready for pickup
+    // window.onload = function() {
         
-        //add delivery date to page
-        $('#delivery_date').html(day_month);
+        // //get current date
+        // d = new Date;
+        // 
+        // var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        // 
+        // var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+        // 
+        // day_month = "Your order " + 
+        //             "will be ready for pickup this coming " + 
+        //             days[(d.getDay() + 4) % 7] + "!";
+        //             // ", " + 
+        //             // months[d.getMonth()];
+        // 
+        // //add delivery date to page
+        // $('#delivery_date').html(day_month);
+                
+        // testStuff();
+        // getParams();
         
-        //get the order parameters from the URL
-        calculateOrder("t-shirt", 5, 25, "medium");
+    // }
+    
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+    
+    function getParams() {
+        
+        var params = decodeOrderData(window.location.search);
+        var color = params["color"];
+        var orderType = params["orderType"];
+        var size = params["size"];
+        var quantity = params["quantity"];
+        var memeImage = params["memeImage"];
+        
+        calculateOrder(orderType, quantity, price, size, color);
+        
     }
     
-    
-    
-    //Calculate order pricing
-    function calculateOrder(item, count, price, size) {
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-        $("#count").val("5");
-        $("#size").val("medium");
-        $("#item").val("tshirt");
-        $("#price").val("25");
-        subtotal = count * price;
-        $("#subtotal").val(subtotal);
-        tax = subtotal * 0.0625;
-        $("#tax").val(tax.toFixed(2));
-        total = tax + subtotal;
-        $("#total").val(total.toFixed(2));
+    //Calculate order cost and populate order summary form
+    function calculateOrder(orderType, quantity, price, size, color) {
         
+        //add the params data to order summary fields
+        $("#count").val(quantity);
+        
+        $("#size").val(size);
+        
+        $("#item").val(orderType);
+        
+        // $("#price").val(price);// don't have this yet in params
+        $("#price").val(25); // placeholder
+        
+        // subtotal = quantity * price;
+        subtotal = quantity * 25; //placeholder value for now
+        $("#subtotal").val("$" + subtotal);
+        
+        tax = subtotal * 0.0625;
+        $("#tax").val("$" + tax.toFixed(2));
+        
+        total = tax + subtotal;
+        $("#total").val("$" + total.toFixed(2));
         
         //disable the fields
         $(".summary").prop("disabled", true);
-            
-
-
         
     }
     
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+    function testStuff() {
+        var queryParams = createOrder("shirt", "white", "small", 42, "randomImage.png");
+        if (queryParams != undefined) {
+          window.location.href = "placeorder.html?" + queryParams
+        }
+    }
+    
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
     
     </script>
     
@@ -148,17 +185,17 @@
             
             <br>
             
-            <label for="subtotal">Subtotal: $</label>
+            <label for="subtotal">Subtotal:</label>
             <input class="summary" type="text"  name='subtotal' id="subtotal" />
             
             <br>
             
-            <label for="tax">MA tax 6.25%: $</label> 
+            <label for="tax">MA tax 6.25%:</label> 
             <input class="summary" type="text"  name='tax' id="tax"/>
             
             <br>
             
-            <label for="total">Total: $</label> 
+            <label for="total">Total:</label> 
             <input class="summary" type="text"  name='total' id="total"/>
             
             <br>
@@ -191,15 +228,17 @@
             
             <label for="phone">Phone*:</label>
             <input class="info" type="tel"   name='phone' value="123-456-7890"  placeholder="format: 123-456-7890" title="Please enter a valid phone number using this pattern: 123-456-7890"/>
+            
+            <div id="consent-div">
+                <input id="consent" type="checkbox" name="consent"> 
+                <label for="consent">By checking this box you commit to paying TuftsMemable at time of pickup.</label>
+            </div>
         </div>
         
-        <div id="delivery_date">
-        </div>
+        <!-- <div id="delivery_date">
+        </div> -->
     
-        <div id="consent-div">
-            <input id="consent" type="checkbox" name="consent"> 
-            <label for="consent">By checking this box you commit to paying TuftsMemable at pickup.</label>
-        </div>
+        
     
     <div class="center">
         <!-- <a class="button" id="" href="design.html">&larr; Update Order</a> -->
@@ -209,6 +248,8 @@
     </form>
 
     <a class="button" id="" href="index.html">Home Page for testing</a>
+    <button onclick="testStuff()">Generate Parameters</button>
+    <button onclick="getParams()">Fill Order Summary</button>
     
   </body>
 
