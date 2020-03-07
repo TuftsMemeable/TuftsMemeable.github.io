@@ -136,7 +136,7 @@ input.button {
 }
 
 #hero-design {
-    background-image: url('slicenew@1x.png');
+    background-image: url('slicenew@1x-min.png');
     min-height: 60VH;
     background-size: contain;
     background-repeat: no-repeat;
