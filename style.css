@@ -1,22 +1,24 @@
 h1, h2, h3 {
-    color: white;
     text-align: center;
     font-weight: normal;
     margin: 25px;
 }
 
-body {
-    font-family: Open Sans, Roboto, sans-serif;
-}
-
 h1 {
     font-size: 25px;
-
 }
 
 h2 {
-    font-size: 20px;
+    color: #fff;
+    font-size: 22px;
+}
 
+h3 {
+    color: black;
+}
+
+body {
+    font-family: Open Sans, Roboto, sans-serif;
 }
 
 p, dl, input, label {
@@ -75,6 +77,10 @@ label {
   transition-duration: 0.4s;
 }
 
+.button-inside-box {
+    background-color: #375795;
+    
+}
 input .button {
     /* color: black; */
 }
