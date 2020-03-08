@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
+          <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script type="text/javascript">
+    $(function(){ $(".nav").load("nav.html");
+    $(".footer").load("footer.html");});
+  </script>
         <meta charset="utf-8">
         <title>Order Confirmation</title>
         
@@ -12,7 +17,7 @@
 
     </head>
     <body>
-        
+        <div class="nav"></div>
       <script language="javascript">
 
       
@@ -54,6 +59,6 @@
           
           <div id="delivery_date">
           </div>
-             
+       <div class="footer"></div>      
     </body>
 </html>
