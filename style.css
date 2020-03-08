@@ -270,34 +270,58 @@ input.button {
   .center {
     margin-top: 25px;
   } */
-  
-}
+   .small-nav {display: none;}
 
-.nav {
-  padding-bottom: 50px;
 }
 
 .nav ul {
 list-style-type: none;
 margin: 0;
-padding: 0;
+padding: 10px 10px;
 overflow: hidden;
-background-color: #333;
+background-color: #4A0D66;
 }
 
 .nav li{
 float: left;
 }
 
+.logo {
+  float: left;
+}
+
 .nav li a{
 display: block;
+font-weight: bold;
+font-size: 18px;
 color: white;
 text-align: center;
 padding: 14px 16px;
 text-decoration: none;
 }
 
-/* Change the link color to #111 (black) on hover */
 .nav li a:hover {
-background-color: #111;
+background-color: #007C82;
+}
+
+.nav ul {
+list-style-type: none;
+margin: 0;
+padding: 10px 10px;
+overflow: hidden;
+background-color: #4A0D66;
+}
+
+.footer p{
+  color: black;
+}
+.footer a{
+  color: #333333;
+}
+.footer {
+  display: block;
+  text-align: center;
+  background-color: #cccccc;
+  padding: 10px 10px;
+  overflow: hidden;
 }
