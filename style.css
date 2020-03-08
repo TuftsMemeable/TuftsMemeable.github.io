@@ -121,7 +121,7 @@ input.button {
 }
 
 #hero-about, #hero-home, #hero-contact, #hero-placeorder, #hero-products {
-    padding-top: 40px;
+    padding-top: 250px;
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -131,11 +131,13 @@ input.button {
 }
 
 #hero-about {
+        padding-top: 250px;
     background-image: url('');
     min-height: 60VH;
 }
 
 #hero-design {
+        padding-top: 250px;
     background-image: url('slicenew@1x-min.png');
     min-height: 60VH;
     background-size: contain;
@@ -143,22 +145,26 @@ input.button {
 }
 
 #hero-home {
+        padding-top: 250px;
     /* background-image: url('slicenew@1x.png'); */
     background-image: url('guysolo.png');
     min-height: 100VH;
 }
 
 #hero-contact {
+        padding-top: 250px;
     background-image: url('');
     min-height: 50VH;
 }
 
 #hero-products {
+        padding-top: 250px;
     background-image: url('twogirls.png');
     min-height: 60VH;
 }
 
 #hero-placeorder {
+        padding-top: 250px;
     min-height: 60VH;
     color: white;
     overflow: hidden;
