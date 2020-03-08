@@ -273,6 +273,10 @@ input.button {
   
 }
 
+.nav {
+  padding-bottom: 50px;
+}
+
 .nav ul {
 list-style-type: none;
 margin: 0;
