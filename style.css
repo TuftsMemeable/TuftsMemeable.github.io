@@ -233,7 +233,7 @@ input.button {
 }
 
 .box img {
-    height: 350px;
+    width: 100%;
     padding-top: 20px;
 }
 
