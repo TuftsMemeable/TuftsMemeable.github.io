@@ -30,6 +30,8 @@ input {
     margin: 3px;
     font-size: 14px;
     color: #000;
+    width: 150px;
+    display: inline-block;
 }
 
 a {
@@ -41,6 +43,7 @@ label {
     width: 120px;
     display: inline-block;
     text-align: left;
+    width: 150px;
 }
 
 #consent-div label {
@@ -233,6 +236,17 @@ input.button {
 
 
 @media (max-width: 750px) {
+    label {
+        text-align: left;
+    }
+    
+    input {
+        margin-bottom: 15px;
+    }
+    
+    #consent-div input {
+        width: 20px;
+    }
      
   #hero-design {
        background-size: cover;
