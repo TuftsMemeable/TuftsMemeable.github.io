@@ -131,15 +131,12 @@ input.button {
 }
 
 #hero-about {
-    padding-top: 250px;
-    background-image: url('');
     min-height: 60VH;
     background-image: url('girlgray.png');
-    min-height: 60VH;
+
 }
 
 #hero-design {
-    padding-top: 250px;
     background-image: url('slicenew@1x-min.png');
     min-height: 60VH;
     background-size: contain;
@@ -148,34 +145,24 @@ input.button {
 }
 
 #hero-home {
-        padding-top: 250px;
     /* background-image: url('slicenew@1x.png'); */
     background-image: url('guysolo.png');
     min-height: 100VH;
 }
 
 #hero-contact {
-        padding-top: 250px;
     background-image: url('');
     min-height: 50VH;
 }
 
 #hero-products {
-        padding-top: 250px;
     background-image: url('twogirls.png');
     min-height: 60VH;
 }
 
 #hero-placeorder {
-        padding-top: 250px;
+    background-image: url('twogirls.png');
     min-height: 60VH;
-    color: white;
-    overflow: hidden;
-    background-color: #0098E3;
-    font-weight: normal;
-    font-size: 25px;
-    line-height: 3em;
-    text-align: center;
 }
 
 #hero-placeorder p {
