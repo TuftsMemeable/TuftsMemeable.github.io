@@ -269,7 +269,9 @@ input.button {
   }
    
   #hero-about, #hero-home, #hero-contact {
-    background-size: 100VH;
+/*     background-size: 100VH; */
+      max-height: 100VH;
+      background-size: cover;
   }
   /* 
   .center {
@@ -277,10 +279,6 @@ input.button {
   } */
    .small-nav {display: none;}
 
-}
-
-@media (max-width: 300px) {
-    .large-nav {display: none;}
 }
 
 .nav ul {
