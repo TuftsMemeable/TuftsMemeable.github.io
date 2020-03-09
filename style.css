@@ -133,6 +133,7 @@ input.button {
 #hero-about {
     background-image: url('');
     min-height: 60VH;
+    background-image: url('girlgray.png');
 }
 
 #hero-design {
