@@ -7,25 +7,27 @@
         display: block;
         position: relative;
         border-width: 0px;
-        width: 300px;
+        width: 100%;
         height: 300px;
         padding-bottom: 30px;
       }
       #designbox {
-        width: 100%;
-        height: 100%;
+        width: 300px;
+        height: 300px;
         position: absolute;
-        top: 15px;
-        right: 20px;
+        left: 50%;
+        transform: translateX(-150px);
       }
       #innerMemeImage {
         z-index: 10;
         position: absolute;
-        left: 75px;
-        top: 110px;
         width: 100px;
         height: 100px;
         opacity: 0%;
+        float: center;
+        left: 50%;
+        top: 90px;
+        transform: translateX(-50px);
       }
       #designForm {
         margin-top: 50px;
@@ -78,30 +80,32 @@
   <div id="hero-design">
       
   </div>
-  <div class="designer">
-      <img src="tshirt.jpg" id="designbox">
-      <img src="" id="innerMemeImage">
-  </div>   
-  <form id="designForm">
-    <label>Order Type:</label>
-    <input type="radio" id="tshirt" name="orderType" value="tshirt">
-    <label for="tshirt">T-Shirt</label>
-    <input type="radio" id="sweatshirt" name="orderType" value="sweatshirt">
-    <label for="sweatshirt">Sweatshirt</label>
-    <input type="radio" id="waterbottle" name="orderType" value="waterbottle">
-    <label for="waterbottle">Water Bottle</label><br>
-    <label>Order Size:</label>
-    <input type="radio" id="small" name="size" value="small">
-    <label for="size">Small</label>
-    <input type="radio" id="medium" name="size" value="medium" checked="checked">
-    <label for="size">Medium</label>
-    <input type="radio" id="large" name="size" value="large">
-    <label for="size">Large</label><br>
-    <label>Meme Image:</label>
-    <input type="file" id="memeImage" name="memeImage" accept="image/png, image/jpeg, image/jpg">
-  <form>
-  
-  <a class="button" id="placeOrder" href="placeorder.html">Place Order</a>
+  <div class="threeboxes">
+    <div class="designer">
+        <img src="tshirt.jpg" id="designbox">
+        <img src="" id="innerMemeImage">
+    </div>   
+    <form id="designForm">
+      <label>Order Type:</label>
+      <input type="radio" id="tshirt" name="orderType" value="tshirt">
+      <label for="tshirt">T-Shirt</label>
+      <input type="radio" id="sweatshirt" name="orderType" value="sweatshirt">
+      <label for="sweatshirt">Sweatshirt</label>
+      <input type="radio" id="waterbottle" name="orderType" value="waterbottle">
+      <label for="waterbottle">Water Bottle</label><br>
+      <label>Order Size:</label>
+      <input type="radio" id="small" name="size" value="small">
+      <label for="size">Small</label>
+      <input type="radio" id="medium" name="size" value="medium" checked="checked">
+      <label for="size">Medium</label>
+      <input type="radio" id="large" name="size" value="large">
+      <label for="size">Large</label><br>
+      <label>Meme Image:</label>
+      <input type="file" id="memeImage" name="memeImage" accept="image/png, image/jpeg, image/jpg">
+    <form>
+    
+    <a class="button" id="placeOrder" href="placeorder.html">Place Order</a>
+  </div>
 
   <div class="footer"></div>
 
@@ -111,8 +115,8 @@
     var designBox = $("#designbox");
 
     var offsets = {
-      "tshirt": "110px",
-      "sweatshirt": "110px",
+      "tshirt": "90px",
+      "sweatshirt": "90px",
       "waterbottle": "130px"
     };
     
