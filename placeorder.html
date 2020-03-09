@@ -72,7 +72,7 @@
                 
                 $('#consent-div').css(
                     {
-                        "border-color": "#4A0D66", "border-width":"2px", "border-style":"solid"
+                        "border-color": "#007C82", "border-width":"2px", "border-style":"solid"
                     });
                 
                 return false;
@@ -117,7 +117,7 @@
         $("#size").val(size);
         
         $("#item").val(orderType);
-        
+        var price = 0;
         if (orderType == "tshirt") {
             price = 25;
         } else if (orderType == "sweatshirt") {
@@ -125,8 +125,9 @@
         } else if (orderType == "waterbottle") {
             price = 30;
         }
+        console.log(typeof price);
         
-        $("#price").val(price);
+        $("#price").val("$" + price);
         // $("#price").val("$" + 25); // placeholder
         
         subtotal = quantity * price;

@@ -130,24 +130,23 @@ input.button {
     background-size: cover;
 }
 
+#hero-home {
+    background-image: url('guysolo.png');
+    min-height: 100VH;
+}
+
 #hero-about {
-    min-height: 60VH;
+    min-height: 50VH;
     background-image: url('girlgray.png');
 
 }
 
 #hero-design {
     background-image: url('slicenew@1x-min.png');
-    min-height: 60VH;
+    min-height: 50VH;
     background-size: contain;
     /* background-position: center; */
     background-repeat: no-repeat;
-}
-
-#hero-home {
-    /* background-image: url('slicenew@1x.png'); */
-    background-image: url('guysolo.png');
-    min-height: 100VH;
 }
 
 #hero-contact {
@@ -157,12 +156,12 @@ input.button {
 
 #hero-products {
     background-image: url('twogirls.png');
-    min-height: 60VH;
+    min-height: 50VH;
 }
 
 #hero-placeorder {
     background-image: url('twogirls.png');
-    min-height: 60VH;
+    min-height: 50VH;
 }
 
 #hero-placeorder p {
