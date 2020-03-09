@@ -255,9 +255,9 @@ input.button {
   }
   
   .intro {
-    height: 400px;
+    height: 300px;
     /* margin: 30px; */
-    margin-top: 20px;
+    margin-top: 0px;
     margin-bottom: 0px;
   }
   
@@ -266,6 +266,7 @@ input.button {
       line-height: 2em;
       /* margin-bottom: 0px; */
       margin-top: 0px;
+      padding: 25px;
   }
    
   #hero-about, #hero-home, #hero-contact {
