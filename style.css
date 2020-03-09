@@ -131,7 +131,7 @@ input.button {
 }
 
 #hero-about {
-        padding-top: 350px;
+        padding-top: 400px;
     background-image: url('');
     min-height: 60VH;
     background-image: url('girlgray.png');
@@ -331,4 +331,8 @@ background-color: #4A0D66;
   background-color: #cccccc;
   padding: 10px 10px;
   overflow: hidden;
+}
+
+.about-div {
+  background-color: #007C82;
 }
