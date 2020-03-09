@@ -6,11 +6,12 @@
     $(function(){ $(".nav").load("nav.html");
     $(".footer").load("footer.html");});
   </script>
+  
     <script src="createOrder.js"></script>    
     <link rel="stylesheet" href="style.css">
     
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
@@ -80,6 +81,9 @@
     	}
     }
     
+
+    
+    
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
     //Determines the day when the order will be ready for pickup
@@ -106,6 +110,8 @@
         
     // }
     
+    
+    
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
     
     function getParams() {
@@ -118,14 +124,18 @@
         var quantity = params["quantity"];
         var memeImage = params["memeImage"];
         
-        calculateOrder(orderType, quantity, price, size, color);
+        calculateOrder(orderType, quantity, size, color);
         
     }
     
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+    
+    window.onload = getParams;
+    
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
     //Calculate order cost and populate order summary form
-    function calculateOrder(orderType, quantity, price, size, color) {
+    function calculateOrder(orderType, quantity, size, color) {
         console.log('inside calculateOrder');
         
         //add the params data to order summary fields
@@ -135,11 +145,19 @@
         
         $("#item").val(orderType);
         
-        // $("#price").val(price);// don't have this yet in params
-        $("#price").val("$" + 25); // placeholder
+        if (orderType == "tshirt") {
+            price = 25;
+        } else if (orderType == "sweatshirt") {
+            price = 50;
+        } else if (orderType == "waterbottle") {
+            price = 30;
+        }
         
-        // subtotal = quantity * price;
-        subtotal = quantity * 25; //placeholder value for now
+        $("#price").val(price);
+        // $("#price").val("$" + 25); // placeholder
+        
+        subtotal = quantity * price;
+        // subtotal = quantity * 25; //placeholder value for now
         $("#subtotal").val("$" + subtotal);
         
         tax = subtotal * 0.0625;
@@ -167,9 +185,9 @@
     </script>
     
     <!-- HERO IMAGE -->
-    <!-- <div id="hero-placeorder">
+    <div id="hero-placeorder">
     
-    </div> -->
+    </div>
 
 
     <!-- ORDER SUMMARY -->
