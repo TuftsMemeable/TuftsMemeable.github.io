@@ -131,14 +131,14 @@ input.button {
 }
 
 #hero-about {
-        padding-top: 250px;
+    padding-top: 250px;
     background-image: url('');
     min-height: 60VH;
     background-image: url('girlgray.png');
 }
 
 #hero-design {
-        padding-top: 250px;
+    padding-top: 250px;
     background-image: url('slicenew@1x-min.png');
     min-height: 60VH;
     background-size: contain;
