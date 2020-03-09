@@ -1,12 +1,17 @@
 <html>
 <head>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script type="text/javascript">
+    $(function(){ $(".nav").load("nav.html");
+    $(".footer").load("footer.html");});
+  </script>
   <link rel="stylesheet" href="style.css">
   <style>
   </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body style="text-align: center;">
-    
+    <div class="nav"></div>
     <script language="javascript">
     
         $(document).ready(function(){
@@ -49,6 +54,7 @@
           <a class="button" id="" href="index.html">Home Page for testing</a>
 
       </div>
-  
+    </div>
+      <div class="footer"></div>
 </body>
 </html>

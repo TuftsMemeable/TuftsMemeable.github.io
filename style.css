@@ -121,7 +121,7 @@ input.button {
 }
 
 #hero-about, #hero-home, #hero-contact, #hero-placeorder, #hero-products {
-    padding-top: 40px;
+    padding-top: 250px;
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -131,12 +131,14 @@ input.button {
 }
 
 #hero-about {
+        padding-top: 250px;
     background-image: url('');
     min-height: 60VH;
     background-image: url('girlgray.png');
 }
 
 #hero-design {
+        padding-top: 250px;
     background-image: url('slicenew@1x-min.png');
     min-height: 60VH;
     background-size: contain;
@@ -144,22 +146,26 @@ input.button {
 }
 
 #hero-home {
+        padding-top: 250px;
     /* background-image: url('slicenew@1x.png'); */
     background-image: url('guysolo.png');
     min-height: 100VH;
 }
 
 #hero-contact {
+        padding-top: 250px;
     background-image: url('');
     min-height: 50VH;
 }
 
 #hero-products {
+        padding-top: 250px;
     background-image: url('twogirls.png');
     min-height: 60VH;
 }
 
 #hero-placeorder {
+        padding-top: 250px;
     min-height: 60VH;
     color: white;
     overflow: hidden;
@@ -271,5 +277,58 @@ input.button {
   .center {
     margin-top: 25px;
   } */
-  
+   .small-nav {display: none;}
+
+}
+
+.nav ul {
+list-style-type: none;
+margin: 0;
+padding: 10px 10px;
+overflow: hidden;
+background-color: #4A0D66;
+}
+
+.nav li{
+float: left;
+}
+
+.logo {
+  float: left;
+}
+
+.nav li a{
+display: block;
+font-weight: bold;
+font-size: 18px;
+color: white;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+}
+
+.nav li a:hover {
+background-color: #007C82;
+}
+
+.nav ul {
+list-style-type: none;
+margin: 0;
+padding: 10px 10px;
+overflow: hidden;
+background-color: #4A0D66;
+}
+
+.footer p{
+  color: black;
+}
+.footer a{
+  color: #333333;
+}
+.footer {
+  display: block;
+  text-align: center;
+  background-color: #cccccc;
+  padding: 10px 10px;
+  overflow: hidden;
 }
