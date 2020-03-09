@@ -135,6 +135,7 @@ input.button {
     background-image: url('');
     min-height: 60VH;
     background-image: url('girlgray.png');
+    min-height: 60VH;
 }
 
 #hero-design {
@@ -171,7 +172,6 @@ input.button {
     color: white;
     overflow: hidden;
     background-color: #0098E3;
-    background-image: url('girl-oranges.png');
     font-weight: normal;
     font-size: 25px;
     line-height: 3em;
@@ -191,11 +191,11 @@ input.button {
 
 }
 #order-summary {
-    background-color: #4A0D66;
+    background-color: #007C82;
 }
 
 #customer-info {
-    background-color: #007C82;
+    background-color: #4A0D66;
     padding: auto;
 }
 
@@ -235,7 +235,7 @@ input.button {
 }
 
 .box img {
-    height: 350px;
+    width: 100%;
     padding-top: 20px;
 }
 
@@ -247,6 +247,10 @@ input.button {
 
 
 @media (max-width: 750px) {
+     
+  #hero-design {
+       background-size: cover;
+  }
     
   .box{
     flex-direction: column;
@@ -258,7 +262,7 @@ input.button {
   }
   
   .intro {
-    height: 400px;
+    height: 300px;
     /* margin: 30px; */
     margin-top: 0px;
     margin-bottom: 0px;
@@ -269,10 +273,13 @@ input.button {
       line-height: 2em;
       /* margin-bottom: 0px; */
       margin-top: 0px;
+      padding: 25px;
   }
    
   #hero-about, #hero-home, #hero-contact {
-    background-size: 100VH;
+/*     background-size: 100VH; */
+      max-height: 100VH;
+      background-size: cover;
   }
   
   #hero-design {

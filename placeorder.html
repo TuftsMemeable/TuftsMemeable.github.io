@@ -1,6 +1,7 @@
 <html>
 
-  <head> 
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   <script type="text/javascript">
     $(function(){ $(".nav").load("nav.html");
@@ -81,34 +82,6 @@
     	}
     }
     
-
-    
-    
-    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
-
-    //Determines the day when the order will be ready for pickup
-    // window.onload = function() {
-        
-        // //get current date
-        // d = new Date;
-        // 
-        // var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-        // 
-        // var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-        // 
-        // day_month = "Your order " + 
-        //             "will be ready for pickup this coming " + 
-        //             days[(d.getDay() + 4) % 7] + "!";
-        //             // ", " + 
-        //             // months[d.getMonth()];
-        // 
-        // //add delivery date to page
-        // $('#delivery_date').html(day_month);
-                
-        // testStuff();
-        // getParams();
-        
-    // }
     
     
     
@@ -131,7 +104,7 @@
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
     
     window.onload = getParams;
-    
+      
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
     //Calculate order cost and populate order summary form
@@ -173,25 +146,31 @@
     
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-    function testStuff() {
-        var queryParams = createOrder("shirt", "white", "small", 42, "randomImage.png");
-        if (queryParams != undefined) {
-          window.location.href = "placeorder.html?" + queryParams
-        }
-    }
+//     function testStuff() {
+//         var queryParams = createOrder("shirt", "white", "small", 42, "randomImage.png");
+//         if (queryParams != undefined) {
+//           window.location.href = "placeorder.html?" + queryParams
+//         }
+//     }
     
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
     
     </script>
+<<<<<<< HEAD
     
     <!-- HERO IMAGE -->
     <div id="hero-placeorder">
     
     </div>
+=======
+>>>>>>> 108ba5d0da38f0ffce18fe85054f478ac1314c47
 
 
     <!-- ORDER SUMMARY -->
     <div id="order-summary">
+      <div id="hero-placeorder">
+      </div>
+      
         <h2>Your Order Summary</h2>
         
         <form name="orderform">

@@ -1,10 +1,44 @@
 <html>
 
   <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      .designer {
+        text-align: center;
+        display: block;
+      }
+    </style>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="createOrder.js"></script>
+    <script type="text/javascript">
+      $(function(){ $(".nav").load("nav.html");$(".footer").load("footer.html");});
+    </script>
     <script type="text/javascript">
       $(function(){ $(".nav").load("nav.html");
       $(".footer").load("footer.html");});
+
+      var images = {
+        "tshirt": "tshirt.jpg",
+        "waterbottle": "waterbottle2.png",
+        "sweatshirt": "sweatshirt.jpg"
+      }
+
+      $(window).load(function() {
+        var params = decodeOrderData(window.location.search);
+
+        /* default order type to shirt */
+        if (params["orderType"] == undefined) {
+          params["orderType"] = "tshirt";
+        }
+        var image = images[params["orderType"]];
+
+        /* fill default radio button */
+        alert(params["orderType"])
+        $("#" + params["orderType"]).prop("checked", true);
+        
+        $("#designbox").attr("src", image);
+
+      });
     </script>
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -15,30 +49,48 @@
     <div class="nav"></div>
     
       <script language="javascript">
-
-    $(document).ready(function(){
-      $('body').css({ display: 'none'}).fadeIn(1500);
-    });
-    
-</script>
+        $(document).ready(function(){
+          $('body').css({ display: 'none'}).fadeIn(1500);
+        });
+      </script>
 
   <div id="hero-design">
       
   </div>
+  <div class="description box designer">
+      <img src="tshirt.jpg" id="designbox">
+  </div>   
+  <form id="designForm">
+    <label>Order Type:</label>
+    <input type="radio" id="tshirt" name="orderType" value="tshirt">
+    <label for="tshirt">T-Shirt</label>
+    <input type="radio" id="sweatshirt" name="orderType" value="sweatshirt">
+    <label for="sweatshirt">Sweatshirt</label>
+    <input type="radio" id="waterbottle" name="orderType" value="waterbottle">
+    <label for="waterbottle">Water Bottle</label><br>
+    <label>Order Size:</label>
+    <input type="radio" id="small" name="size" value="small">
+    <label for="size">Small</label>
+    <input type="radio" id="medium" name="size" value="medium" checked="checked">
+    <label for="size">Medium</label>
+    <input type="radio" id="large" name="size" value="large">
+    <label for="size">Large</label><br>
+    <label>Meme Image:</label>
+    <input type="file" id="memeImage" name="memeImage" accept="image/png, image/jpeg, image/jpg">
+  <form>
   
-  
-  
-  <div class="threeboxes">
-    <div class="description box">
+  <a class="button" id="placeOrder" href="placeorder.html">Place Order</a>
 
-    </div>
-    <div class="description box">
-
-    </div>
-    <div class="description box">
-
-    </div>
-  </div>
   <div class="footer"></div>
+
+  <script>
+    /* form validation */
+    var form = $("#designForm");
+    var designBox = $("#designbox");
+
+    $("input[type=radio][name=orderType]").change(function() {
+      designBox.attr("src", images[this.value]);
+    });
+  </script>
   </body>
 </html>

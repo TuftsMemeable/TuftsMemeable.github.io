@@ -1,5 +1,6 @@
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title> About </title>
   <link rel="stylesheet" type="text/css" href="style.css"/>
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -7,11 +8,12 @@
       $(function(){ $(".nav").load("nav.html");$(".footer").load("footer.html");});
     </script>
 </head>
-<body style="text-align: center; background-color: #007C82">
+<body style="text-align: center;">
+  <div style="background-color:#007C82;">
   <div class="nav"></div>
   <div id="hero-about"></div>
   <div>
-    <h1 style="color: white;"> About Us </h1>
+    <h1 style="color: white; font-size: 30;"> About Us </h1>
   </div>
   <div class="box" style="width: 50%; background-color: #4A0D66; color: white; font-size: 20px; line-height: 2em;">
     <h3 style="color: white"> Our History </h3> </br>
@@ -32,6 +34,7 @@
     </div>
     </br></br>
   </div>
+</div>
   <div class="footer"></div>
 </body>
 </html>
