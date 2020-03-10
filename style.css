@@ -160,8 +160,8 @@ input.button {
 
 #hero-placeorder {
     padding-top: 600px;
-    background-image: url('girl-oranges.png');
-    min-height: 50VH;
+    background-image: url('slicenew@1x-min.png');
+    max-height: 10VH;
 }
 
 #hero-placeorder p {

@@ -70,7 +70,7 @@
         	var phone_pattern = /^\(?[\d]{3}\)?[\s-]?[\d]{3}[\s-]?[\d]{4}$/;
                  
                 if (!phone_pattern.test(phone.value)) {
-        			alert("Please enter a valid phone number using the dash format: 123-456-7890")
+        			alert("Please enter a valid phone number")
         			phone.focus();
         			return false;
         		}
@@ -236,7 +236,7 @@
             <br>
 
             <label for="phone">Phone*:</label>
-            <input class="info" type="tel"   name='phone'  placeholder="123-456-7890" title="Please enter a valid phone number using this pattern: 123-456-7890"/>
+            <input class="info" type="tel"   name='phone'/>
 
             <div id="consent-div">
                 <input id="consent" type="checkbox" name="consent">
