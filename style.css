@@ -288,6 +288,10 @@ input.button {
   }
 }
 
+@media (max-width: 650px) {
+  .small-nav {display: none;}
+}
+
 .nav ul {
 list-style-type: none;
 margin: 0;
