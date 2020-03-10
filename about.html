@@ -5,6 +5,9 @@
   <link rel="stylesheet" type="text/css" href="style.css"/>
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script type="text/javascript">
+    $(document).ready(function(){
+      $('body').css({ display: 'none'}).fadeIn(1500);
+    });
       $(function(){ $(".nav").load("nav.html");$(".footer").load("footer.html");});
     </script>
 </head>
