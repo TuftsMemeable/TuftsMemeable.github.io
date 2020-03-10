@@ -65,9 +65,9 @@
             }
 
             //validate phone field is not empty and is in the right format
-    		var phone_pattern = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-
-        		if (!phone.value.match(phone_pattern)) {
+        	var phone_pattern = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+                 
+                if (phone_pattern.test(phone.value)) {
         			alert("Please enter a valid phone number using the dash format: 123-456-7890")
         			phone.focus();
         			return false;
