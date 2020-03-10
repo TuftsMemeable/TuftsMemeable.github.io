@@ -1,4 +1,4 @@
-const validOrderTypes = ["shirt", "pants", "waterbottle"];
+const validOrderTypes = ["tshirt", "sweatshirt", "waterbottle"];
 const validColors = ["red", "blue", "white"];
 const validSizes = ["small", "medium", "large"];
 

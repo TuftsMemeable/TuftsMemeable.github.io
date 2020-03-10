@@ -35,12 +35,16 @@
         all: revert;
         margin-top: 50px;
       }
-      label {
-        all: revert;
-        width: 100px;
-      } 
       input {
-        all: revert;
+        text-align: center;
+        margin-left: 10px;
+        padding-top: 5px;
+        text-align: left;
+      }
+      label {
+        text-align: left;
+        display: inline-block;
+        width: 100px;
       }
     </style>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -71,6 +75,7 @@
         
         /* default form values */
         $("#" + params["orderType"]).prop("checked", true);
+        $("#" + params["size"]).prop("checked", true);
         $("#designbox").attr("src", image);
 
         if (params["orderType"] == "waterbottle") {
@@ -94,34 +99,35 @@
   <div id="hero-design">
       
   </div>
-  <div class="threeboxes">
+  <div class="threeboxes" >
     <div class="designer">
         <img src="tshirt.jpg" id="designbox">
         <img src="" id="innerMemeImage">
     </div>   
     <form id="designForm">
-      <label>Order Type:</label>
-      <input type="radio" id="tshirt" name="orderType" value="tshirt">
-      <label for="tshirt">T-Shirt</label>
-      <input type="radio" id="sweatshirt" name="orderType" value="sweatshirt">
-      <label for="sweatshirt">Sweatshirt</label>
-      <input type="radio" id="waterbottle" name="orderType" value="waterbottle">
-      <label for="waterbottle">Water Bottle</label><br>
-      <label class="sizeDisp">Order Size:</label>
-      <input class="sizeDisp" type="radio" id="small" name="size" value="small">
-      <label class="sizeDisp" for="size">Small</label>
-      <input class="sizeDisp" type="radio" id="medium" name="size" value="medium" checked="checked">
-      <label class="sizeDisp" for="size">Medium</label>
-      <input class="sizeDisp" type="radio" id="large" name="size" value="large">
-      <label class="sizeDisp" for="size">Large</label><br>
-      <label>Meme Image:</label>
-      <input type="file" id="memeImage" name="memeImage" accept="image/png, image/jpeg, image/jpg">
+      <label class="desf" >Order Type:</label>
+      <input class="desf" type="radio" id="tshirt" name="orderType" value="tshirt">
+      <label class="desf" for="tshirt">T-Shirt</label>
+      <input class="desf" type="radio" id="sweatshirt" name="orderType" value="sweatshirt">
+      <label class="desf" for="sweatshirt">Sweatshirt</label>
+      <input class="desf" type="radio" id="waterbottle" name="orderType" value="waterbottle">
+      <label class="desf" for="waterbottle">Water Bottle</label><br>
+      <label class="desf sizeDisp">Order Size:</label>
+      <input class="desf sizeDisp" type="radio" id="small" name="size" value="small">
+      <label class="desf sizeDisp" for="size">Small</label>
+      <input class="desf sizeDisp" type="radio" id="medium" name="size" value="medium" checked="checked">
+      <label class="desf sizeDisp" for="size">Medium</label>
+      <input class="desf sizeDisp" type="radio" id="large" name="size" value="large">
+      <label class="desf sizeDisp" for="size">Large</label><br>
+      <label class="desf" >Meme Image:</label>
+      <input class="desf" type="file" id="memeImage" name="memeImage" accept="image/png, image/jpeg, image/jpg">
     </form>
     
-    <button id="doPlaceOrder">Place Order</a>
+    <button class="button" style="background-color:375795" id="doPlaceOrder">Place Order</a>
   </div>
 
   <div class="footer"></div>
+  </body>
 
   <script>
     /* form validation */
@@ -170,7 +176,7 @@
       }
     });
 
-    
+    /* user wants to place the order... */
     $("#doPlaceOrder").click(function() {
       var orderDetails = createOrder(
         params["orderType"],
@@ -179,6 +185,10 @@
         1,
         memeImagePath
       );
+      if (memeImagePath == undefined) {
+        alert("missing meme image!  please select an image");
+        return;
+      }
       if (orderDetails == undefined) {
         alert("invalid order details.  please try again.");
         return;
@@ -187,5 +197,4 @@
     });
 
   </script>
-  </body>
 </html>

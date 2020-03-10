@@ -205,7 +205,7 @@
             
             <br>
             
-            <a class="button" id="" href="design.html">&larr; Update Order</a>
+            <a class="button" id="updateOrder" href="design.html">&larr; Update Order</a>
         </form>
     </div>
     
@@ -261,6 +261,13 @@
     
     <div class="footer"></div>
   </body>
+  
+  <script>
+    $("#updateOrder").click(function(e) {
+      e.preventDefault();
+      window.location.href = "design.html" + window.location.search;
+    });
+  </script>
 
 </html>
 
