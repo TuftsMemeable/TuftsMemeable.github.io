@@ -67,11 +67,17 @@
             //validate phone field is not empty and is in the right format
     		var phone_pattern = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
 
-    		if (!phone.value.match(phone_pattern) || phone.value == "") {
-    			alert("Please enter a valid phone number using the dash format: 123-456-7890")
-    			phone.focus();
-    			return false;
-    		}
+        		if (!phone.value.match(phone_pattern)) {
+        			alert("Please enter a valid phone number using the dash format: 123-456-7890")
+        			phone.focus();
+        			return false;
+        		}
+                
+                if (phone.value == "") {
+                    alert("Please enter a valid phone number using the dash format: 123-456-7890")
+                    phone.focus();
+                    return false;
+                }
 
             // checkbox validation
             if(!consent.checked) {
