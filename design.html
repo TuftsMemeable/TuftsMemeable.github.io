@@ -82,6 +82,10 @@
           $(".sizeDisp").css("visibility", "hidden");
         }
 
+        if (params["quantity"] != undefined && params["quantity"] != "") { 
+          $("#quantity").val(params["quantity"]);
+        }
+
       });
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -119,6 +123,8 @@
       <label class="desf sizeDisp" for="size">Medium</label>
       <input class="desf sizeDisp" type="radio" id="large" name="size" value="large">
       <label class="desf sizeDisp" for="size">Large</label><br>
+      <label class="desf">Quantity:</label>
+      <input class="desf" type="text" id="quantity" name="quantity" size="10" value="1"></label><br>
       <label class="desf" >Meme Image:</label>
       <input class="desf" type="file" id="memeImage" name="memeImage" accept="image/png, image/jpeg, image/jpg">
     </form>
@@ -182,7 +188,7 @@
         params["orderType"],
         "white", 
         $("input[name=size]:checked").val(),
-        1,
+        $("#quantity").val(),
         memeImagePath
       );
       if (memeImagePath == undefined) {
