@@ -6,76 +6,66 @@
     <script type="text/javascript">
       $(function(){ $(".nav").load("nav.html");$(".footer").load("footer.html");});
     </script>
-    
+
     <script src="createOrder.js"></script>
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        
+
     <link rel="stylesheet" href="style.css">
-    
+
   </head>
 
   <body>
-      
+
       <div class="nav"></div>
-      
+
       <script language="javascript">
-      
-      function testStuff() {
-          var queryParams = createOrder("shirt", "white", "small", 42, "randomImage.png");
-          if (queryParams != undefined) {
-            window.location.href = "index.html?" + queryParams
-          }
-      }
-      
+
       $(document).ready(function(){
         $('body').css({ display: 'none'}).fadeIn(1500);
       });
-      
+
       </script>
-    
+
     <div id="hero-home">
         <!-- <h1>Show your school pride</h1> -->
-    </div>  
-    
+    </div>
+
     <div class="intro">
-        <p>Exclusively for the Tufts community, Memeable Tufts allows you to add your favorite Tufts memes to apparel, water bottles and accessories at affordable prices! 
-        <br> <br>
-        Show your school pride, Jumbos!
+        <p style="font-weight:bold;">Show your school pride, Jumbos!</p><p>
+          <br> <br>
+          Exclusively for the Tufts community, Memeable Tufts allows you to add your favorite Tufts memes to apparel, water bottles and accessories at affordable prices!
         </p>
     </div>
-      
-    
+
+
     <div class="threeboxes">
-        
-        <h2>Our Featured Products</h2> 
-        
-        <div class="description box">
-            <h3>T-Shirts</h3>
-            <img src="tshirt.jpg">
-    
-        </div>   
-        
-        <div class="description box">
-            <h3>Water Bottles</h3>
-            <img src="waterbottle2.jpg">
-            
+
+        <h2 style="font-weight:bold;">Our Featured Products</h2>
+
+        <div class="box">
+            <h3 >T-Shirts<br>&nbsp;</h3>
+            <img src="tshirt2.png">
+
         </div>
-        
-        <div class="description box">
-            <h3>Sweatshirts</h3>
-            <img src="sweatshirt.jpg">
-          
+
+        <div class="box">
+            <h3>Water<br>Bottles</h3>
+            <img src="waterbottle4.png">
+
         </div>
-        
+
+        <div class="box">
+            <h3>Sweatshirts<br>&nbsp;</h3>
+            <img src="sweatshirt2.png">
+
+        </div>
+
         <div class="center">
-            <a class="button" id="" href="products.html">View Products</a>    
+            <a class="button" id="" href="products.html">View Products</a>
         </div>
-        
-        <a class="button" id="button-home" href="placeorder.html">Place Order</a>
-        <button onclick="testStuff()">Generate Parameters</button>
-    </div> 
-    
+    </div>
+
     <div class="footer"></div>
   </body>
 

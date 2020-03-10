@@ -7,30 +7,38 @@
     $(function(){ $(".nav").load("nav.html");
     $(".footer").load("footer.html");});
   </script>
-  
-    <script src="createOrder.js"></script>    
+
+    <script src="createOrder.js"></script>
     <link rel="stylesheet" href="style.css">
-    
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    #updateOrder:hover {
+      background-color:white;
+      color: black;
+      cursor: pointer;
+    }
+    #updateOrder {color:white;background-color:#3172AF;border: solid 2px #3172AF; }
+    </style>
   </head>
 
   <body>
       <div class="nav"></div>
     <script language="javascript">
 
-    
+
         $(document).ready(function(){
           $('body').css({ display: 'none'}).fadeIn(1500);
         });
-        
 
-    
+
+
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
     //Validates that required fields are filled in before submitting the form
     function validation() {
-    	
+
     	with (document.buyerform) {
     		//validate first name
     		if (fname.value == "") {
@@ -38,14 +46,14 @@
                 fname.focus();
     			return false;
     		}
-    		
+
             //validate last name
             if (lname.value == "") {
                 alert("Please enter your last name");
                 lname.focus();
     			return false;
             }
-            
+
             // verify email is a tufts.edu address and not empty
             email_address = email.value;
             console.log("email address: " + email_address);
@@ -55,67 +63,67 @@
                 email.focus();
                 return false;
             }
-                
+
             //validate phone field is not empty and is in the right format
     		var phone_pattern = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-    
+
     		if (!phone.value.match(phone_pattern) || phone.value == "") {
     			alert("Please enter a valid phone number using the dash format: 123-456-7890")
     			phone.focus();
     			return false;
     		}
-            
+
             // checkbox validation
             if(!consent.checked) {
-                
+
                 alert("Please check the box to indicate you commit to submitting payment upon receiving your swag. Thank you!");
-                
+
                 $('#consent-div').css(
                     {
-                        "border-color": "#007C82", "border-width":"2px", "border-style":"solid"
+                        "border-color": "white", "border-width":"2px", "border-style":"solid"
                     });
-                
+
                 return false;
             }
-    		
+
     		return true;
     	}
     }
-    
-    
-    
-    
+
+
+
+
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
-    
+
     function getParams() {
         console.log('inside get params');
-        
+
         var params = decodeOrderData(window.location.search);
         var color = params["color"];
         var orderType = params["orderType"];
         var size = params["size"];
         var quantity = params["quantity"];
         var memeImage = params["memeImage"];
-        
+
         calculateOrder(orderType, quantity, size, color);
-        
+
     }
-    
+
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
-    
+
     window.onload = getParams;
-      
+
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
     //Calculate order cost and populate order summary form
     function calculateOrder(orderType, quantity, size, color) {
         console.log('inside calculateOrder');
-        
+
         //add the params data to order summary fields
         $("#count").val(quantity);
-        
+
         $("#size").val(size);
-        
+
         $("#item").val(orderType);
         var price = 0;
         if (orderType == "tshirt") {
@@ -126,142 +134,118 @@
             price = 30;
         }
         console.log(typeof price);
-        
+
         $("#price").val("$" + price);
         // $("#price").val("$" + 25); // placeholder
-        
+
         subtotal = quantity * price;
         // subtotal = quantity * 25; //placeholder value for now
         $("#subtotal").val("$" + subtotal);
-        
+
         tax = subtotal * 0.0625;
         $("#tax").val("$" + tax.toFixed(2));
-        
+
         total = tax + subtotal;
         $("#total").val("$" + total.toFixed(2));
-        
+
         //disable the fields
         $(".summary").prop("disabled", true);
-        
-    }
-    
-    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-//     function testStuff() {
-//         var queryParams = createOrder("shirt", "white", "small", 42, "randomImage.png");
-//         if (queryParams != undefined) {
-//           window.location.href = "placeorder.html?" + queryParams
-//         }
-//     }
-    
-    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
-    
+    }
+
     </script>
-    
-    <!-- HERO IMAGE -->
+
     <div id="hero-placeorder">
     </div>
-    
+
     <!-- ORDER SUMMARY -->
     <div id="order-summary">
-     
-      
-        <h2>Your Order Summary</h2>
-        
+
+
+        <h2 style="font-weight: bold; color:black;">Your Order Summary</h2><br>
+
         <form name="orderform">
-            
-            <label for="item">Product:</label>
+
+            <label for="item" style=" color:black;">Product:</label>
             <input class="summary" type="text"  name='item' id="item" />
-            
+
             <br>
-            
-            <label for="size">Size:</label>
+
+            <label for="size" style=" color:black;">Size:</label>
             <input class="summary" type="text"  name='size' id="size" />
-            
+
             <br>
-            
-            <label for="count">Count:</label>
+
+            <label for="count" style=" color:black;">Count:</label>
             <input class="summary" type="text"  name='count' id="count" />
-            
+
             <br>
-            
-            <label for="price">Item Price:</label>
+
+            <label for="price" style=" color:black;">Item Price:</label>
             <input class="summary" type="text"  name='price' id="price"/>
-            
+
             <br>
-            
-            <label for="subtotal">Subtotal:</label>
+
+            <label for="subtotal" style=" color:black;">Subtotal:</label>
             <input class="summary" type="text"  name='subtotal' id="subtotal" />
-            
+
             <br>
-            
-            <label for="tax">MA tax 6.25%:</label> 
+
+            <label for="tax" style=" color:black;">MA tax 6.25%:</label>
             <input class="summary" type="text"  name='tax' id="tax"/>
-            
+
             <br>
-            
-            <label for="total">Total:</label> 
+
+            <label for="total" style="color:black;">Total:</label>
             <input class="summary" type="text"  name='total' id="total"/>
-            
+
             <br>
-            
+
             <a class="button" id="updateOrder" href="design.html">&larr; Update Order</a>
         </form>
     </div>
-    
-        
+
+
     <!-- CUSTOMER INFORMATION -->
     <form name="buyerform" onsubmit="return validation()" action="ordercomplete.html">
-        
+
         <div id="customer-info">
-            <h2>Your Information</h2>
-            
+            <h2 style="font-weight: bold;">Your Information</h2>
+
             <label for="fname">First Name*:</label>
-            <input class="info" type="text"  name='fname' value="sam"/>
-            
+            <input class="info" type="text"  name='fname' />
+
             <br>
-            
+
             <label for="lname">Last Name*:</label>
-            <input class="info" type="text"  name='lname' value="Ewenczyk"/>
-            
+            <input class="info" type="text"  name='lname' />
+
             <br>
-        
+
             <label for="email">Email*:</label>
-            <input class="info" type="email"   name='email' value='sam@tufts.edu' placeholder="john.dewick@tufts.edu" title="Please enter a valid email address"/>
-            
-            <br>        
-            
+            <input class="info" type="email"   name='email' placeholder="john.smith@tufts.edu" title="Please enter a valid email address"/>
+
+            <br>
+
             <label for="phone">Phone*:</label>
-            <input class="info" type="tel"   name='phone' value="123-456-7890"  placeholder="format: 123-456-7890" title="Please enter a valid phone number using this pattern: 123-456-7890"/>
-            
+            <input class="info" type="tel"   name='phone'  placeholder="123-456-7890" title="Please enter a valid phone number using this pattern: 123-456-7890"/>
+
             <div id="consent-div">
-                <input id="consent" type="checkbox" name="consent"> 
-                <label for="consent">By checking this box you commit to paying TuftsMemable at time of pickup.</label>
+                <input id="consent" type="checkbox" name="consent">
+                <label for="consent" style="font-style: italic;">*By checking this box you commit to paying TuftsMemable at time of pickup.</label>
             </div>
-            
-            
+            <br>
+
+
             <div class="center">
                 <input class="button" type = "submit" value = "Confirm Order"/>
             </div>
         </div>
-        
-        <!-- <div id="delivery_date">
-        </div> -->
-    
-        
-    
 
-        
     </form>
-<div class="" style="background-color: black">
-    <a class="button" id="" href="index.html">Home Page for testing</a>
-    <button onclick="testStuff()">Generate Parameters</button>
-    <button onclick="getParams()">Fill Order Summary</button>
-</div>
-    
     <div class="footer"></div>
   </body>
-  
+
   <script>
     $("#updateOrder").click(function(e) {
       e.preventDefault();
@@ -270,4 +254,3 @@
   </script>
 
 </html>
-

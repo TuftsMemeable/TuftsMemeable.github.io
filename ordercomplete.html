@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-      
+
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   <script type="text/javascript">
     $(function(){ $(".nav").load("nav.html");
@@ -10,28 +10,37 @@
   </script>
         <meta charset="utf-8">
         <title>Order Confirmation</title>
-        
 
-          <script src="createOrder.js"></script>    
+
+          <script src="createOrder.js"></script>
           <link rel="stylesheet" href="style.css">
-          
+
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.outer-square{
+  margin: auto;
+  width: 90%;
+  box-shadow: 2px 4px 4px black;
+  padding: 10px;
+  background-color: #3172AF;;
+}
+</style>
     </head>
-    
+
     <body>
         <div class="nav"></div>
       <script language="javascript">
 
-      
+
           $(document).ready(function(){
             $('body').css({ display: 'none'}).fadeIn(2500);
           });
-          
 
-          
+
+
         // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
-      
+
         //Determines the day when the order will be ready for pickup (4 days out)
         window.onload = function() {
 
@@ -39,29 +48,36 @@
             d = new Date;
 
             var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-            
+
             //array is 0-indexed
             var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-            
+
             console.log("current day: " +d.getDay() );
             console.log((d.getDay() + 4) % 7 - 1);
-            
+
             //d.getDay is NOT 0-index, i.e. Monday = 1, Tuesday = 2
-            day_month = "Your order " + 
-                      "will be ready for pickup this coming " + 
+            day_month = "Your order " +
+                      "will be ready for pickup this coming " +
                       days[(d.getDay() + 4) % 7 - 1] + "!";
-                      // ", " + 
+                      // ", " +
                       // months[d.getMonth()];
 
             //add delivery date to page
+            confirm_num = Math.floor((Math.random() * 20000) + 1);
+            $('#confirm_num').html("#" + confirm_num);
             $('#delivery_date').html(day_month);
         }
-          
+
       </script>
-          
-          
-          <div id="delivery_date">
-          </div>
-       <div class="footer"></div>      
+      <br><br>
+      <div class="outer-square" >
+          <p  style="color: white;text-align: center;font-weight:bold;font-size:20px;">THANK YOU!</p>
+          <div id="delivery_date"></div>
+          <p  style="color: white;text-align: center;font-weight:bold;">Please arrive between the hours of 10:00am - 4:30pm and expect to wait up to 30 minutes for your order to be printed live!<br><br>Thank you for your business. Your confirmation numer is:<br></p>
+          <div id="confirm_num"></div>
+          <br>
+      </div>
+      <br><br>
+       <div class="footer"></div>
     </body>
 </html>

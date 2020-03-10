@@ -13,22 +13,25 @@
         padding-bottom: 30px;
       }
       #designbox {
-        width: 300px;
-        height: 300px;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-150px);
-        border: 5px solid black;
+        height: 400px;
+        background-color: white;
+        transition-duration: 0.4s;
+        box-shadow: 2px 4px 4px black;
+      }
+      .outer-square{
+        margin: auto;
+        width: 90%;
+        box-shadow: 2px 4px 4px black;
       }
       #innerMemeImage {
         z-index: 10;
         position: absolute;
         width: 100px;
         height: 100px;
-        opacity: 0%;
+        opacity: 50%;
         float: center;
         left: 50%;
-        top: 90px;
+        top: 140px;
         transform: translateX(-50px);
       }
       #designForm {
@@ -47,6 +50,7 @@
         width: 100px;
       }
     </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="createOrder.js"></script>
     <script type="text/javascript">
@@ -57,9 +61,9 @@
       $(".footer").load("footer.html");});
 
       var images = {
-        "tshirt": "tshirt.jpg",
-        "waterbottle": "waterbottle2.png",
-        "sweatshirt": "sweatshirt.jpg"
+        "tshirt": "tshirt2.png",
+        "waterbottle": "waterbottle4.png",
+        "sweatshirt": "sweatshirt2.png"
       }
 
       var params = undefined;
@@ -72,7 +76,7 @@
           params["orderType"] = "tshirt";
         }
         var image = images[params["orderType"]];
-        
+
         /* default form values */
         $("#" + params["orderType"]).prop("checked", true);
         $("#" + params["size"]).prop("checked", true);
@@ -82,7 +86,7 @@
           $(".sizeDisp").css("visibility", "hidden");
         }
 
-        if (params["quantity"] != undefined && params["quantity"] != "") { 
+        if (params["quantity"] != undefined && params["quantity"] != "") {
           $("#quantity").val(params["quantity"]);
         }
 
@@ -90,48 +94,48 @@
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
-  
+
   <body>
     <div class="nav"></div>
-    
+    <br><br>
       <script language="javascript">
         $(document).ready(function(){
           $('body').css({ display: 'none'}).fadeIn(1500);
         });
       </script>
-
-  <div id="hero-design">
-      
-  </div>
-  <div class="threeboxes" >
+  <div class="outer-square" style="background-color:white;">
+  <div class="threeboxes" style="background-color:#3172AF;">
+    <div center>
     <div class="designer">
         <img src="tshirt.jpg" id="designbox">
         <img src="" id="innerMemeImage">
-    </div>   
+    </div>
+    </div>
+    <br><br><br>
     <form id="designForm">
-      <label class="desf" >Order Type:</label>
+      <label class="desf" style="text-align:center;font-weight:bold;">Order Type:</label><br><br>
       <input class="desf" type="radio" id="tshirt" name="orderType" value="tshirt">
       <label class="desf" for="tshirt">T-Shirt</label>
       <input class="desf" type="radio" id="sweatshirt" name="orderType" value="sweatshirt">
       <label class="desf" for="sweatshirt">Sweatshirt</label>
       <input class="desf" type="radio" id="waterbottle" name="orderType" value="waterbottle">
-      <label class="desf" for="waterbottle">Water Bottle</label><br>
-      <label class="desf sizeDisp">Order Size:</label>
+      <label class="desf" for="waterbottle">Water Bottle</label><br><br>
+      <label class="desf sizeDisp" style="text-align:center;font-weight:bold;">Order Size:</label><br><br>
       <input class="desf sizeDisp" type="radio" id="small" name="size" value="small">
       <label class="desf sizeDisp" for="size">Small</label>
       <input class="desf sizeDisp" type="radio" id="medium" name="size" value="medium" checked="checked">
       <label class="desf sizeDisp" for="size">Medium</label>
       <input class="desf sizeDisp" type="radio" id="large" name="size" value="large">
-      <label class="desf sizeDisp" for="size">Large</label><br>
-      <label class="desf">Quantity:</label>
-      <input class="desf" type="text" id="quantity" name="quantity" size="10" value="1"></label><br>
-      <label class="desf" >Meme Image:</label>
+      <label class="desf sizeDisp" for="size">Large</label><br><br>
+      <label class="desf" style="text-align:center;font-weight:bold;">Quantity:</label><br><br>
+      <input class="desf" type="text" id="quantity" name="quantity" size="10" value="1"></label><br><br>
+      <label class="desf" style="text-align:center;font-weight:bold;">Meme Image:</label><br><br>
       <input class="desf" type="file" id="memeImage" name="memeImage" accept="image/png, image/jpeg, image/jpg">
     </form>
-    
-    <button class="button" style="background-color:375795" id="doPlaceOrder">Place Order</a>
-  </div>
 
+    <button class="button" id="doPlaceOrder">Place Order</a>
+  </div>
+</div>
   <div class="footer"></div>
   </body>
 
@@ -144,9 +148,9 @@
     var offsets = {
       "tshirt": "90px",
       "sweatshirt": "90px",
-      "waterbottle": "130px"
+      "waterbottle": "150px"
     };
-    
+
     /* update the source of the meme image on input change */
     $("input[type=radio][name=orderType]").change(function() {
       $("#innerMemeImage").css("top", offsets[this.value]);
@@ -158,7 +162,7 @@
         $(".sizeDisp").css("visibility", "visible");
       }
     });
-    
+
     /* update the background image (shirt, sweatshirt, waterbottle) on
      * input type change */
     $("#memeImage").change(function(e0) {
@@ -186,7 +190,7 @@
     $("#doPlaceOrder").click(function() {
       var orderDetails = createOrder(
         params["orderType"],
-        "white", 
+        "white",
         $("input[name=size]:checked").val(),
         $("#quantity").val(),
         memeImagePath

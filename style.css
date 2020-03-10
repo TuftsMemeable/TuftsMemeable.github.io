@@ -1,3 +1,10 @@
+html, body {
+  margin:0;
+
+  padding:0;
+}
+
+
 h1, h2, h3 {
     text-align: center;
     font-weight: normal;
@@ -49,7 +56,7 @@ label:not(.desf) {
 #consent-div label {
     width: 100%;
     display: inline;
-    text-align: center; 
+    text-align: center;
 }
 
 #consent-div {
@@ -62,38 +69,37 @@ label:not(.desf) {
 }
 
 #consent-div input, label {
-    /* margin-left: 0px;
-    margin-right: 0px; */
     margin: 0px 0px;
 }
 
 .button {
   /* background-color: #375795; */
-  border: solid 2px #FFF;
+  border: solid 2px white;
   /* #375795 */
-  color: #FFF;
+  color: black;
   padding: 12px 14px;
   margin: 20px;
   text-align: center;
   display: inline-block;
   font-size: 14px;
-  border-radius: 4px;
   max-width: 500px;
+  background-color: white;
   transition-duration: 0.4s;
+  box-shadow: 2px 4px 4px black;
+  font-weight: bold;
 }
 
 .button-inside-box {
-    background-color: #375795;
-    
+    background-color: white;
 }
 input.button {
-    color: #fff;
-    background-color: #007C82;
+    color: black;
+    background-color: white;
 
 }
 
 .button:hover {
-  background-color:#24305E;
+  background-color:#3172AF;
   color: white;
   cursor: pointer;
 }
@@ -103,7 +109,7 @@ input.button {
 }
 
 .intro p{
-    color: #FFF;
+    color: black;
     font-weight: normal;
     font-size: 25px;
     line-height: 2em;
@@ -113,7 +119,7 @@ input.button {
 }
 
 .intro {
-    background-color: #4A0D66;
+    background-color: white;
     padding-top: 200px;
     padding-bottom: 200px;
 }
@@ -123,7 +129,7 @@ input.button {
     min-height: 500px;
 }
 
-#hero-about, #hero-home, #hero-contact, #hero-placeorder, #hero-products {
+#hero-about, #hero-home, #hero-placeorder, #hero-products {
     padding-top: 250px;
     background-position: center;
     background-size: 100%;
@@ -134,36 +140,27 @@ input.button {
 }
 
 #hero-home {
+    padding-top: 300px;
     background-image: url('guysolo.png');
     min-height: 100VH;
 }
 
 #hero-about {
+    padding-top: 800px;
     min-height: 50VH;
     background-image: url('girlgray.png');
 
 }
 
-#hero-design {
-    background-image: url('slicenew@1x-min.png');
-    min-height: 50VH;
-    background-size: contain;
-    /* background-position: center; */
-    background-repeat: no-repeat;
-}
-
-#hero-contact {
-    background-image: url('');
-    min-height: 50VH;
-}
-
 #hero-products {
+    padding-top: 600px;
     background-image: url('twogirls.png');
     min-height: 50VH;
 }
 
 #hero-placeorder {
-    background-image: url('twogirls.png');
+    padding-top: 600px;
+    background-image: url('girl-oranges.png');
     min-height: 50VH;
 }
 
@@ -175,16 +172,16 @@ input.button {
     /* margin-top: 50px; */
     padding: 50px;
     text-align: center;
-    
+
     min-height: 400px;
 
 }
 #order-summary {
-    background-color: #007C82;
+    background-color: white;
 }
 
 #customer-info {
-    background-color: #4A0D66;
+    background-color: #3172AF;
     padding: auto;
 }
 
@@ -192,11 +189,12 @@ input.button {
 #order-summary p {
     text-align: center;
 }
-#delivery_date {
-    color: #254087;
+#delivery_date, #confirm_num{
+    color: white;
     /* font-size: 20px; */
-    font-weight:600;
-    
+    text-align: center;
+    font-weight:bold;
+
 }
 
 .threeboxes {
@@ -205,7 +203,7 @@ input.button {
     padding-top: 5%;
     padding-bottom: 5%;
     text-align: center;
-    background-color: #007C82;
+    background-color: #3172AF;
 }
 
 .box {
@@ -213,14 +211,17 @@ input.button {
     display: flex;
     flex-direction: row;
     background-color: white;
-    border-style: solid;
-    border-radius: 8px;
-    border-color: #375795;
     width: 18%;
+    box-shadow: 2px 4px 4px black;
     padding-top: 1%;
     display: inline-block;
     padding: 15 32;
     margin: 20px;
+}
+
+.box h3{
+  color: black;
+  font-weight: bold;
 }
 
 .box img {
@@ -239,35 +240,35 @@ input.button {
     label {
         text-align: left;
     }
-    
+
     input {
         margin-bottom: 15px;
     }
-    
+
     #consent-div input {
         width: 20px;
     }
-     
+
   #hero-design {
        background-size: cover;
   }
-    
+
   .box{
     flex-direction: column;
     width: 250px;
   }
-  
+
   .threeboxes{
     margin-bottom: 25px;
   }
-  
+
   .intro {
     height: 300px;
     /* margin: 30px; */
     margin-top: 0px;
     margin-bottom: 0px;
   }
-  
+
   .intro p {
       font-size: 18px;
       line-height: 2em;
@@ -275,23 +276,20 @@ input.button {
       margin-top: 0px;
       padding: 25px;
   }
-   
+
   #hero-about, #hero-home, #hero-contact {
 /*     background-size: 100VH; */
       max-height: 100VH;
       background-size: cover;
   }
-  
+
   #hero-design {
        background-size: cover;
   }
- 
-  /* 
-  .center {
-    margin-top: 25px;
-  } */
-   .small-nav {display: none;}
+}
 
+@media (max-width: 650px) {
+  .small-nav {display: none;}
 }
 
 .nav ul {
@@ -303,7 +301,7 @@ background-color: #4A0D66;
 }
 
 .nav li{
-float: left;
+float: right;
 }
 
 .logo {
@@ -313,23 +311,29 @@ float: left;
 .nav li a{
 display: block;
 font-weight: bold;
-font-size: 18px;
+font-size: 25px;
 color: white;
 text-align: center;
 padding: 14px 16px;
 text-decoration: none;
+transition-duration: 0.4s;
 }
 
 .nav li a:hover {
-background-color: #007C82;
+  color: #b3b3b3;
 }
 
 .nav ul {
 list-style-type: none;
 margin: 0;
-padding: 10px 10px;
+padding-top: 20px;
+padding-bottom: 20px;
 overflow: hidden;
-background-color: #4A0D66;
+background-color: #3172AF;
+}
+
+.hamburger {
+  display: none;
 }
 
 .footer p{
@@ -341,7 +345,7 @@ background-color: #4A0D66;
 .footer {
   display: block;
   text-align: center;
-  background-color: #cccccc;
+  background-color: white;
   padding: 10px 10px;
   overflow: hidden;
 }
