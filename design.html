@@ -33,8 +33,8 @@
       #designForm {
         margin-top: 50px;
       }
-      label input {
-        width: 40px;
+      #designForm label {
+        width: 100px;
       }
     </style>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -52,8 +52,10 @@
         "sweatshirt": "sweatshirt.jpg"
       }
 
+      var params = undefined;
+
       $(window).load(function() {
-        var params = decodeOrderData(window.location.search);
+        params = decodeOrderData(window.location.search);
 
         /* default order type to shirt */
         if (params["orderType"] == undefined) {
@@ -105,9 +107,9 @@
       <label for="size">Large</label><br>
       <label>Meme Image:</label>
       <input type="file" id="memeImage" name="memeImage" accept="image/png, image/jpeg, image/jpg">
-    <form>
+    </form>
     
-    <a class="button" id="placeOrder" href="placeorder.html">Place Order</a>
+    <button class="button" id="doPlaceOrder">Place Order</a>
   </div>
 
   <div class="footer"></div>
@@ -116,6 +118,7 @@
     /* form validation */
     var form = $("#designForm");
     var designBox = $("#designbox");
+    var memeImagePath = undefined;
 
     var offsets = {
       "tshirt": "90px",
@@ -127,6 +130,7 @@
     $("input[type=radio][name=orderType]").change(function() {
       $("#innerMemeImage").css("top", offsets[this.value]);
       designBox.attr("src", images[this.value]);
+      params["orderType"] = this.value;
     });
     
     /* update the background image (shirt, sweatshirt, waterbottle) on
@@ -145,10 +149,25 @@
             }
             $("#innerMemeImage").css("opacity", "100%");
             $("#innerMemeImage").attr("src", e.target.result);
+            memeImagePath = e.target.result;
           }
         }
         reader.readAsDataURL(this.files[0]);
       }
+    });
+    
+    $("#doPlaceOrder").click(function() {
+      var orderDetails = createOrder(params["orderType"],
+                                     "white", 
+                                     $("input[name=size]:checked").val(),
+                                     1,
+                                     memeImagePath);
+      if (orderDetails == undefined) {
+        alert("invalid order details.  please try again.");
+        return;
+      }
+      window.location.href = "placeorder.html?" + orderDetails;
+
     });
   </script>
   </body>
