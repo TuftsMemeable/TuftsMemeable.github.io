@@ -34,7 +34,7 @@
         margin-top: 50px;
       }
       #designForm label {
-        width: 50px;
+        width: 120px;
       }
     </style>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -62,11 +62,14 @@
           params["orderType"] = "tshirt";
         }
         var image = images[params["orderType"]];
-
-        /* fill default radio button */
-        $("#" + params["orderType"]).prop("checked", true);
         
+        /* default form values */
+        $("#" + params["orderType"]).prop("checked", true);
         $("#designbox").attr("src", image);
+
+        if (params["orderType"] == "waterbottle") {
+          $(".sizeDisp").css("visibility", "hidden");
+        }
 
       });
     </script>
@@ -98,13 +101,13 @@
       <label for="sweatshirt">Sweatshirt</label>
       <input type="radio" id="waterbottle" name="orderType" value="waterbottle">
       <label for="waterbottle">Water Bottle</label><br>
-      <label>Order Size:</label>
-      <input type="radio" id="small" name="size" value="small">
-      <label for="size">Small</label>
-      <input type="radio" id="medium" name="size" value="medium" checked="checked">
-      <label for="size">Medium</label>
-      <input type="radio" id="large" name="size" value="large">
-      <label for="size">Large</label><br>
+      <label class="sizeDisp">Order Size:</label>
+      <input class="sizeDisp" type="radio" id="small" name="size" value="small">
+      <label class="sizeDisp" for="size">Small</label>
+      <input class="sizeDisp" type="radio" id="medium" name="size" value="medium" checked="checked">
+      <label class="sizeDisp" for="size">Medium</label>
+      <input class="sizeDisp" type="radio" id="large" name="size" value="large">
+      <label class="sizeDisp" for="size">Large</label><br>
       <label>Meme Image:</label>
       <input type="file" id="memeImage" name="memeImage" accept="image/png, image/jpeg, image/jpg">
     </form>
@@ -131,11 +134,16 @@
       $("#innerMemeImage").css("top", offsets[this.value]);
       designBox.attr("src", images[this.value]);
       params["orderType"] = this.value;
+      if (this.value == "waterbottle") {
+        $(".sizeDisp").css("visibility", "hidden");
+      } else {
+        $(".sizeDisp").css("visibility", "visible");
+      }
     });
     
     /* update the background image (shirt, sweatshirt, waterbottle) on
      * input type change */
-    $("#memeImage").change(function() {
+    $("#memeImage").change(function(e0) {
       if (this.files && this.files[0]) {
         var reader = new FileReader();
         reader.onload = function(e) {
@@ -149,26 +157,31 @@
             }
             $("#innerMemeImage").css("opacity", "100%");
             $("#innerMemeImage").attr("src", e.target.result);
-            memeImagePath = e.target.result;
+            memeImagePath = e0.target.files[0].name;
           }
         }
         reader.readAsDataURL(this.files[0]);
       }
     });
+
+
     
     $("#doPlaceOrder").click(function() {
-      var orderDetails = createOrder(params["orderType"],
-                                     "white", 
-                                     $("input[name=size]:checked").val(),
-                                     1,
-                                     memeImagePath);
+      alert(memeImagePath);
+      var orderDetails = createOrder(
+        params["orderType"],
+        "white", 
+        $("input[name=size]:checked").val(),
+        1,
+        memeImagePath
+      );
       if (orderDetails == undefined) {
         alert("invalid order details.  please try again.");
         return;
       }
       window.location.href = "placeorder.html?" + orderDetails;
-
     });
+
   </script>
   </body>
 </html>
