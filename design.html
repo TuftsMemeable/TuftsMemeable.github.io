@@ -18,6 +18,7 @@
         position: absolute;
         left: 50%;
         transform: translateX(-150px);
+        border: 5px solid black;
       }
       #innerMemeImage {
         z-index: 10;
@@ -34,7 +35,8 @@
         margin-top: 50px;
       }
       #designForm label {
-        width: 120px;
+        all: revert;
+        width: 100px;
       }
     </style>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -164,10 +166,8 @@
       }
     });
 
-
     
     $("#doPlaceOrder").click(function() {
-      alert(memeImagePath);
       var orderDetails = createOrder(
         params["orderType"],
         "white", 
