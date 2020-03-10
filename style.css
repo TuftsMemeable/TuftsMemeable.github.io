@@ -133,7 +133,7 @@ input.button {
     min-height: 500px;
 }
 
-#hero-about, #hero-home, #hero-placeorder, #hero-products {
+#hero-about, #hero-home, #hero-placeorder, #hero-products, #hero-contact {
     padding-top: 250px;
     background-position: center;
     background-size: 100%;
@@ -151,18 +151,25 @@ input.button {
 
 #hero-about {
     padding-top: 800px;
-    min-height: 50VH;
+    max-height: 20VH;
     background-image: url('girlgray.png');
+    background-position: top;
 
 }
 
 #hero-products {
     padding-top: 600px;
     background-image: url('twogirls.png');
-    min-height: 50VH;
+    max-height: 40VH;
 }
 
 #hero-placeorder {
+    padding-top: 600px;
+    background-image: url('slicenew@1x-min.png');
+    max-height: 10VH;
+}
+
+#hero-contact {
     padding-top: 600px;
     background-image: url('slicenew@1x-min.png');
     max-height: 10VH;
