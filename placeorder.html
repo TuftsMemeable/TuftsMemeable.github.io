@@ -65,7 +65,9 @@
             }
 
             //validate phone field is not empty and is in the right format
-        	var phone_pattern = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+            // Matches: (573)8841878 | 573-884-1234 | 573 234 1256
+            // Non-Matches: (573)(673)2345 | 573-12-2345
+        	var phone_pattern = /^\(?[\d]{3}\)?[\s-]?[\d]{3}[\s-]?[\d]{4}$/;
                  
                 if (phone_pattern.test(phone.value)) {
         			alert("Please enter a valid phone number using the dash format: 123-456-7890")
