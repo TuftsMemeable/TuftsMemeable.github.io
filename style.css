@@ -150,8 +150,8 @@ input.button {
 }
 
 #hero-about {
-    padding-top: 800px;
-    max-height: 20VH;
+    padding-top: 600px;
+    min-height: 40VH;
     background-image: url('girlgray.png');
     background-position: top;
 
@@ -160,7 +160,7 @@ input.button {
 #hero-products {
     padding-top: 600px;
     background-image: url('twogirls-min.png');
-    max-height: 40VH;
+    min-height: 40VH;
 }
 
 #hero-placeorder {
