@@ -277,7 +277,7 @@ input.button {
     height: 300px;
     /* margin: 30px; */
     margin-top: 0px;
-    margin-bottom: 0px;
+    margin-bottom: 100px;
   }
 
   .intro p {
@@ -300,7 +300,18 @@ input.button {
 }
 
 @media (max-width: 650px) {
-  .small-nav {display: none;}
+  .desk-nav {display: none;}
+  .logo{float:none;margin:auto;}
+  .mobile-nav {display: inline; float: left; z-index: 10;}
+}
+
+@media (min-width: 650px){
+  .mobile-nav{
+    display: none;
+  }
+  #nav2{
+    display: none;
+  }
 }
 
 .nav ul {
@@ -341,10 +352,6 @@ padding-top: 20px;
 padding-bottom: 20px;
 overflow: hidden;
 background-color: #3172AF;
-}
-
-.hamburger {
-  display: none;
 }
 
 .footer p{
