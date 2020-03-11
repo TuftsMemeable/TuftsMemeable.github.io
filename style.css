@@ -302,7 +302,11 @@ input.button {
 @media (max-width: 650px) {
   .desk-nav {display: none;}
   .logo{float:none;margin:auto;}
-  .mobile-nav {display: inline; float: left; z-index: 10;}
+  .mobile-nav {display: inline; float: left; z-index: 10;    margin-left: 20%;}
+  .nav a {
+    float: none;
+    margin-left: 25%;
+  }
 }
 
 @media (min-width: 650px){
