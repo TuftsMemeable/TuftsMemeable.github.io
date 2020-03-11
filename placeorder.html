@@ -23,7 +23,7 @@
     </style>
   </head>
 
-  <body>
+  <body style="text-align: center;">
       <div class="nav"></div>
     <script language="javascript">
 
@@ -68,13 +68,13 @@
             // Matches: (573)8841878 | 573-884-1234 | 573 234 1256
             // Non-Matches: (573)(673)2345 | 573-12-2345
         	var phone_pattern = /^\(?[\d]{3}\)?[\s-]?[\d]{3}[\s-]?[\d]{4}$/;
-                 
+
                 if (!phone_pattern.test(phone.value)) {
         			alert("Please enter a valid phone number")
         			phone.focus();
         			return false;
         		}
-                
+
                 if (phone.value == "") {
                     alert("Please enter a valid phone number using the dash format: 123-456-7890")
                     phone.focus();
